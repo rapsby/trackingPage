@@ -45,6 +45,7 @@
 
 </head>
 <body>
+
 <?php
 
 
@@ -67,9 +68,12 @@
 	$stmt = sqlsrv_query($conn,$sql);
 	
 	
-	while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC) ) {
+	$row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC)
 		
-		echo"<tr><td><div align='center'><input type='text' name='txtCustomerID' size='5' value='<?=$row[0];?>'></td> </tr>"
+
+
+
+
 
 
 	?>
@@ -79,12 +83,12 @@
 	
 	
 	<?php
-	}
+	
 	?>   
 
 	</table>
 
-<h1>hello</h1>
+
 
 
 
