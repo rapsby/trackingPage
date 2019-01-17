@@ -1,0 +1,107 @@
+create table student (
+S_name         varchar not null,
+S_pro	       varchar not null,
+S_startdate    varchar not null,
+LSA            varchar not null,
+S_tag          varchar not null PRIMARY KEY,
+Notes          varchar not null,
+DocuSign       int not null,
+Cpu            varchar not null,
+AddtoLed       varchar not null,
+Ordered        int not null,
+Onhand 	       int not null,
+LenApp	       int not null,
+TimApp	       int not null,
+PickUpDate     varchar not null,
+ShipDate       varchar not null,
+TrackingNumber varchar not null,
+Received       varchar not null,
+Completed      int not null,
+MSOFFICE       int not null,
+ReceiveDate     varchare
+)
+
+
+
+----------------------------------------------------
+
+
+
+
+use TestDB1
+
+create table aaa(
+	
+	ID int NOT NULL,
+	NAME VARCHAR(30),
+	dept_name VARCHAR(30)
+	
+	
+	)
+	
+INSERT INTO aaa
+VALUES(111,'aaa','aaaa');
+INSERT INTO aaa
+VALUES(1161,'aaad','ahaaa');
+INSERT INTO aaa
+VALUES(1311,'aada','aabaa');
+
+
+
+----------------------------------------------------
+
+
+
+
+create table student (
+id		int, primary key,
+name         varchar(30) not null,
+pro	       varchar(30) not null,
+startdate    varchar(30) not null,
+LSA            int not null,
+tag          varchar(30) not null,
+Notes          varchar(30) not null,
+DocuSign       int not null,
+Cpu            varchar(30) not null,
+AddtoLed       varchar(30) not null,
+Ordered        int not null,
+Onhand 	       int not null,
+LenApp	       int not null,
+TimApp	       int not null,
+PickUpDate     varchar(30) not null,
+ShipDate       varchar(30) not null,
+TrackingNumber varchar(30) not null,
+Received       varchar(30) not null,
+Completed      int not null,
+MSOFFICE       int not null,
+ReturnReceived varchar(30) not null
+)
+
+
+INSERT INTO student
+VALUES(1, 'KIM','Comp.Sci.','20160516',1,'20165115','abc',1 ,'i7','charged',1,0,1,1,'20190115','20190113','123456','20190118' ,1,1,'20190125');
+
+INSERT INTO student
+VALUES(2, 'Edward','Biology','20140811',1,'20145106','scholarship student',1 ,'i9','charged',1,0,1,1,'20190104','20190103','456482','20190107' ,1,0,'20190114');
+
+INSERT INTO student
+VALUES(3, 'JACK','Medicine','20141027',1,'20145124','I hate blood',1 ,'i5','charged',1,0,1,1,'20190114','20190113','951027','20190117' ,1,1,'201901224');
+
+INSERT INTO student
+VALUES(4, 'John','English','20141111',1,'20141196','Seoul-national university',1 ,'i11','charged',1,0,1,1,'20190103','20190102','1111111','20190106' ,1,1,'20190113');
+
+INSERT INTO student
+VALUES(5, 'Kyle','Philosophy','20191001',1,'20191000','i like pizza',1 ,'i3','charged',1,0,1,1,'20190102','20190101','265716','20190105' ,1,0,'20190112');
+
+INSERT INTO student
+VALUES(6, 'Rob','Law','20140508',1,'20145148','I love mathmatics',1 ,'i7','charged',1,0,1,1,'20190116','20190115','7820622','20190119' ,1,1,'20190126');
+
+
+
+
+
+----------------------------------------------------
+
+
+
+

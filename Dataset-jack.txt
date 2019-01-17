@@ -1,0 +1,48 @@
+Beltran Aispuro, Mariano, PBS, '', '', '', Upgraded laptop, y, i9, i7, '', '', '' 
+Blocker, LaNesha, BS-BSM, '', '', '', Upgraded laptop, y, i9, i7, '', '', '' 
+Bowman, Michael, MB, 86NC652, 1/15/19, 7741-9213-2573, Early release ok'd by SG.Upgraded laptop, y, i9, i7, y, y, y
+Dwyer, MichaelBS-BSM, F1YD652, 1/15/19, 7741-9213-7678, Early release ok'd by SG.Upgraded laptop, y, i9, i7, y, y, y  
+
+Ellett, Ryan, WD, ¡®¡¯, ¡®¡¯, ¡®¡¯, Upgraded laptop, y, 19, 17, ¡®¡¯, ¡®¡¯, ¡®¡¯ 
+Garcia, Jesus, BS-DACA, ¡®¡¯, ¡®¡¯, ¡®¡¯, Upgraded laptop, y, 19, 17, ¡®¡¯, ¡®¡¯, ¡®¡¯
+Garza, Claudine, MB, ¡®¡¯, ¡®¡¯, ¡®¡¯, Upgraded laptop, y, 19, 17, ¡®¡¯, ¡®¡¯, ¡®¡¯
+Gonzalez Hernandez, Rodolfo, PBS, ¡®¡¯, ¡®¡¯, ¡®¡¯, Early release ok¡¯d by SG. Upgraded laptop., y, i9, i7, ¡®¡¯
+Manissa Lopez, BS-BSM, 3C5B652, 1/15/19, 7741-9218-6297, ¡®¡¯, y, i9, i7, y, y, y
+Martin jr., Dennis, 3D, ¡®¡¯, ¡®¡¯, ¡®¡¯, Upgraded laptop, y, i9, i7, ¡®¡¯, ¡®¡¯, ¡®¡¯
+Modeste-Simon, Arnnica, BS-WD, F5LG652, 1/15/19, 7741-9218-6297. Upgraded laptop, y, i9, i7, y, y, y
+Moore, Harley, BS-IT, H98C652, 1/15/19, 7741-9219-4571, Student wants to purchase another laptop.Early release OK¡¯d by SG., y, i9, i7, y, y, y
+Padilla, Christina, IT, FRTC652, 1/15/19, 7741-9220-6811, Upgraded laptop, y, i9, i7, y, y, y
+Palmer, John, BS-B5M, ¡®¡¯, ¡®¡¯, ¡®¡¯, Upgraded laptop, y, i9, i7, ¡®¡¯, ¡®¡¯, ¡®¡¯
+Perez, Thomas, BS-ITNS, ¡®¡¯, ¡®¡¯, ¡®¡¯, Upgraded laptop, y, i9, i7, ¡®¡¯, ¡®¡¯, ¡®¡¯
+Reyes, Jesus, BS-BSM, 494H652, 1/15/19, Pick UP,  ¡®¡¯, y, i9, i7, y, y, y
+Rhodes, Allen, BS-BSM, ¡®¡¯, ¡®¡¯, ¡®¡¯, Upgraded laptop, y, i9, i7, ¡®¡¯, ¡®¡¯, ¡®¡¯
+Salcedo, Adrian, PBS, ¡®¡¯, ¡®¡¯, ¡®¡¯, Upgraded laptop, y, i9, i7, ¡®¡¯, ¡®¡¯, ¡®¡¯
+Tutuila, Fetuu, DPB, 366D6S2, 1/15/19, 7741-9221-5128, ¡®¡¯, y, i9, i7, y, y, y
+Vinyard, Ashley, 3D, ¡®¡¯, ¡®¡¯, ¡®¡¯, Upgraded laptop, y, i9, i7, ¡®¡¯, ¡®¡¯, ¡®¡¯
+Hartness, Nelson, BS-B5M, ¡®¡¯, ¡®¡¯, ¡®¡¯, Upgraded laptop, y, i9, i7, ¡®¡¯, ¡®¡¯, ¡®¡¯
+
+
+INSERT INTO student
+VALUES(27, 'Palmer, John','BS-B5M','20160516',1,'','Upgraded Laptop',1 ,'15inch-i7','charged',1,1,1,1,'','1/15/19','7741-9194-8979','20190118' ,1,1,'20190125');
+
+INSERT INTO student
+VALUES(28, 'Perez, Thomas','BS-ITNS','20160516',1,'','Upgraded Laptop',1 ,'15inch-i7','charged',1,1,1,1,'','1/15/19','7741-9194-8979','20190118' ,1,1,'20190125');
+
+INSERT INTO student
+VALUES(29, 'Reyes, Jesus','BS-BSM','20160516',1,'','Upgraded Laptop',1 ,'15inch-i7','charged',1,1,1,1,'','1/15/19','7741-9194-8979','20190118' ,1,1,'20190125');
+
+INSERT INTO student
+VALUES(30, 'Rhodes, Allen','BS-BSM','20160516',1,'','Upgraded Laptop',1 ,'15inch-i7','charged',1,1,1,1,'','1/15/19','7741-9194-8979','20190118' ,1,1,'20190125');
+
+INSERT INTO student
+VALUES(31, 'Salcedo, Adrian','PBS','20160516',1,'','Upgraded Laptop',1 ,'15inch-i7','charged',1,1,1,1,'','1/15/19','7741-9194-8979','20190118' ,1,1,'20190125');
+
+INSERT INTO student
+VALUES(32, 'Tutuila, Fetuu','DPB','20160516',1,'','Upgraded Laptop',1 ,'15inch-i7','charged',1,1,1,1,'','1/15/19','7741-9194-8979','20190118' ,1,1,'20190125');
+
+INSERT INTO student
+VALUES(33, 'Vinyard, Ashley','3D','20160516',1,'','Upgraded Laptop',1 ,'15inch-i7','charged',1,1,1,1,'','1/15/19','7741-9194-8979','20190118' ,1,1,'20190125');
+
+INSERT INTO student
+VALUES(34, 'Hartness, Nelson','BS-B5M','20160516',1,'','Upgraded Laptop',1 ,'15inch-i7','charged',1,1,1,1,'','1/15/19','7741-9194-8979','20190118' ,1,1,'20190125');
+

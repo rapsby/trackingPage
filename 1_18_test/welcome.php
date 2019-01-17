@@ -17,7 +17,7 @@
 
 	function submit_form() {
 		document.frm.target = 'ifrm';
-		document.frm.action = 'downloadexcel.php';
+		document.frm.action = 'edward.php';
 		document.frm.submit();
 	}
 </script>
@@ -47,11 +47,6 @@
 </style>
 </head>
 <body>
-	<?php
-	session_start();
-
-
-	?>
 
 	<?php
 	$name = $_POST["name"];
@@ -65,12 +60,6 @@
 //$sql = "SELECT * FROM student";
 //$sql = "SELECT * FROM student WHERE name LIKE 'John' ";
 	$sql = "SELECT * FROM student WHERE name LIKE '%".$name."%' ";
-	$_SESSION['query'] = "$name";
-	echo $name;
-	echo " space ";
-	echo $sql;
-	echo $_SESSION['sql'];
-
 	$stmt = sqlsrv_query($conn,$sql);
 	echo '<table class="phptable" border=1 >';
 	echo "<tr>
@@ -79,6 +68,7 @@
 	<th>Program</th>
 	<th>Phone Number</th>
 	<th>email</th>
+
 	</tr>";
 	/*
 	<th>Start Date</th>
@@ -130,14 +120,11 @@
 	echo "</table>";
 	?>
 
-	<h1></h1>
-	<form method='post' name='frm'>
-		<input value="Download" type="button" onclick="location.href='downloadexcel.php'">
+	<form method='post' name='frm' >
 
-		<input type="button" value="Insert" onclick="location.href='Insert.php'">
-		<input type="submit" name="submit" value="Delete">
+		<input type='hidden' name='sql' >
+		<input value="Download" type="button" onclick="submit_form()">
 	</form>
-	
 
 </body>
 </html>

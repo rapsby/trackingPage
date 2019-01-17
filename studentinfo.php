@@ -18,10 +18,10 @@
 	.phptable th{
 		background-color: #d96459;
 		color: white;
-		font-size: 11px;
+		font-size: 12px;
 	}
 	.phptable td{
-		font-size: 10px;
+		font-size: 12px;
 	}
 	.phptable tr
 	{
@@ -121,13 +121,19 @@
 		<td>$row[19]</td>
 		<td>$row[20]</td>
 		</tr>";
-	}
-	echo "</table>";
-	echo "<a href='Edit.php?id=<?$row[0];?>'>Edit</a>"
 	
 
+	echo "</table>";
+
+	//$test = array($row[0],$row[1],$row[2]);
+	//$_POST["test"] = $test;
+	
+}
+	include "Edit.php";
+	
 	?>
 
+	<!-- <a href="Edit.php?id=<?php echo $row['id'];?>">Edit</a> -->
 
 
 

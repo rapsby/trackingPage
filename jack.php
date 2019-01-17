@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="mystyle.css">
+	<link rel="stylesheet" type="text/css" href="fallstyle.css">
 	<style type="text/css">
 .menubar{
 border:none;
@@ -166,21 +166,37 @@ color:#888888;
  <li><a href="https://hangouts.google.com/?hl=ko-US&ht=0&hcb=0&lm1=1547163981604&hs=84&hmv=1&ssc=WyIiLDAsbnVsbCxudWxsLG51bGwsW10sbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLDg0LG51bGwsbnVsbCxudWxsLFsxNTQ3MTYzOTgxNjA0XSxudWxsLG51bGwsW1tudWxsLG51bGwsW251bGwsIisxODA1MzU0NzcwMSJdXV0sbnVsbCxudWxsLHRydWUsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsW10sW10sbnVsbCxudWxsLG51bGwsW10sbnVsbCxudWxsLG51bGwsW10sbnVsbCxudWxsLFtdXQ..&action=chat&pn=%2B18053547701" target="popup" >Contact</a></li>
 </ul>
 </div>
-<?PHP
-	$hostname = "localhost"; // 서버 ip 
-	$username = "FALL1"; //db 접근 user 
-	$password = "qqqqqq1!"; //db 접근 user password 
-	$dbname = "TestDB1"; //DB 이름 
 
-	$mscon=MSSQL_CONNECT($hostname, $username, $password) or DIE("DATABASE FAILED TO RESPOND."); 
-	mssql_select_db($dbname, $mscon) or DIE("Table unavailable"); 
 
-	$sql="select * from test"; 
-	$result=mssql_query($sql, $mscon); 
-	mssql_close($mscon); 
-?>
+
+<script>
+
+  function submit_form() {
+
+    document.frm.target = 'ifrm';
+
+    document.frm.action = 'welcome.php';
+
+    document.frm.submit();
+
+  }
+
+</script>
+
+
+
+<form method='post' name='frm' style="text-align: right">
+
+  <input type=text name=name>
+
+  <input type=button value='Search' onclick='submit_form()'>
+
+</form>
+
+<iframe name='ifrm' width='100%' height='200px' frameborder='2px'></iframe>
 
 
 </body>
+
 
 </html>
