@@ -64,11 +64,11 @@
 	$conn = sqlsrv_connect( $hostname, $connectionInfo);
 //$sql = "SELECT * FROM student";
 //$sql = "SELECT * FROM student WHERE name LIKE 'John' ";
+	
 	$sql = "SELECT * FROM student WHERE name LIKE '%".$name."%' ";
-	$_SESSION['query'] = "$name";
-	echo $name;
-	echo " space ";
-	echo $sql;
+	
+
+	$_SESSION['sql'] = $sql;
 	echo $_SESSION['sql'];
 
 	$stmt = sqlsrv_query($conn,$sql);

@@ -133,6 +133,7 @@
 	
 	?>
 
+	<input type="button" value="Delete" onclick="location.href='Delete.php'">
 	<!-- <a href="Edit.php?id=<?php echo $row['id'];?>">Edit</a> -->
 
 

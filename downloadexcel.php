@@ -1,15 +1,18 @@
 <?php
+session_start();
+$sql = $_SESSION["sql"];
+
 
 $name = $_POST["name"];
-	$username = 'FALL1';
-	$password = 'qqqqqq1!';
-	$hostname = '10.1.10.24';
-	$dbName = 'TestDB1';
+$username = 'FALL1';
+$password = 'qqqqqq1!';
+$hostname = '10.1.10.24';
+$dbName = 'TestDB1';
 
-	$serverName = "10.1.10.24\\FALL1";
+$serverName = "10.1.10.24\\FALL1";
 
-	$connectionInfo = array( "Database"=>$dbName, "UID" => $username, "PWD" => $password);
-	$conn = sqlsrv_connect( $hostname, $connectionInfo);
+$connectionInfo = array( "Database"=>$dbName, "UID" => $username, "PWD" => $password);
+$conn = sqlsrv_connect( $hostname, $connectionInfo);
 
 header( "Content-type: application/vnd.ms-excel; charset=utf-8");
 
@@ -27,37 +30,36 @@ $EXCEL_FILE = "
 
 <table border='1'>
 
-    <tr>
+<tr>
 
-       <th>id</th>
-       <th>name</th>
-	   <th>pro</th>
-       <th>phoneNumber</th>
-       <th>email</th>
-       <th>startdate</th>
-	   <th>LSA</th>
-	   <th>tag</th>
-	   <th>Notes</th>
-	   <th>DocuSign</th>
-	   <th>Cpu</th>
-	   <th>AddtoLed</th>
-	   <th>Ordered</th>
-	   <th>Onhand</th>
-	   <th>LenApp</th>
-	   <th>TimApp</th>
-	   <th>PickUpDate</th>
-	   <th>ShipDate</th>
-	   <th>TrackingNumber</th>
-	   <th>Received</th>
-	   <th>Completed</th>
-	   <th>MSOFFICE</th>
-	   <th>ReturnReceived</th>
-    </tr>
+<th>id</th>
+<th>name</th>
+<th>pro</th>
+<th>phoneNumber</th>
+<th>email</th>
+<th>startdate</th>
+<th>LSA</th>
+<th>tag</th>
+<th>Notes</th>
+<th>DocuSign</th>
+<th>Cpu</th>
+<th>AddtoLed</th>
+<th>Ordered</th>
+<th>Onhand</th>
+<th>LenApp</th>
+<th>TimApp</th>
+<th>PickUpDate</th>
+<th>ShipDate</th>
+<th>TrackingNumber</th>
+<th>Received</th>
+<th>Completed</th>
+<th>MSOFFICE</th>
+<th>ReturnReceived</th>
+</tr>
 
 ";
 
-//$sql = $_SESSION["sql"];
-$sql = "SELECT * FROM student";
+//$sql = "SELECT * FROM student";
 
 $stmt = sqlsrv_query($conn,$sql);
 
@@ -69,36 +71,36 @@ $stmt = sqlsrv_query($conn,$sql);
 
 while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC) ) {
 
-$EXCEL_FILE .= "
+	$EXCEL_FILE .= "
 
-    <tr>
+	<tr>
 
-		<td>$row[0]</td>
-		<td>$row[1]</td>
-		<td>$row[2]</td>
-		<td>$row[3]</td>
-		<td>$row[4]</td>
-       	<td>$row[5]</td>
-		<td>$row[6]</td>
-		<td>$row[7]</td>
-		<td>$row[8]</td>
-		<td>$row[9]</td>
-		<td>$row[10]</td>
-		<td>$row[11]</td>
-		<td>$row[12]</td>
-		<td>$row[13]</td>
-		<td>$row[14]</td>
-		<td>$row[15]</td>
-		<td>$row[16]</td>
-		<td>$row[17]</td>
-		<td>$row[18]</td>
-		<td>$row[19]</td>
-		<td>$row[20]</td>
-		<td>$row[21]</td>
-		<td>$row[22]</td>
-    </tr>
+	<td>$row[0]</td>
+	<td>$row[1]</td>
+	<td>$row[2]</td>
+	<td>$row[3]</td>
+	<td>$row[4]</td>
+	<td>$row[5]</td>
+	<td>$row[6]</td>
+	<td>$row[7]</td>
+	<td>$row[8]</td>
+	<td>$row[9]</td>
+	<td>$row[10]</td>
+	<td>$row[11]</td>
+	<td>$row[12]</td>
+	<td>$row[13]</td>
+	<td>$row[14]</td>
+	<td>$row[15]</td>
+	<td>$row[16]</td>
+	<td>$row[17]</td>
+	<td>$row[18]</td>
+	<td>$row[19]</td>
+	<td>$row[20]</td>
+	<td>$row[21]</td>
+	<td>$row[22]</td>
+	</tr>
 
-";
+	";
 
 }
 

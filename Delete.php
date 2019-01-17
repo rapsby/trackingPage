@@ -61,23 +61,24 @@ table tr
 // $sql = "SELECT * FROM student";
 // $sql = "SELECT * FROM student WHERE name LIKE 'John' ";
 
-	$sql = "DELETE FROM student WHERE id = ?";
+	$sql = "DELETE FROM student WHERE id=$_POST['txtId']";
 
-	$params = array(
-		$_POST["txtId"],
-		);
+	// $params = array(
+	// 	$_POST["txtId"]
+	// 	);
+
 	$stmt = sqlsrv_query($conn,$sql,$params);
 
 	if( $stmt === false ) {
 
 	//die(print("error"))
-	die( print_r( "Record delete fail"));
+	die( print_r( "Record Delete fail"));
 
 	}
 
 	else
 	{
-	echo "Record delete successfully";
+	echo "Record Delete successfully";
 
 	}
 
