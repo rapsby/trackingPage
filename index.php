@@ -3,16 +3,28 @@
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript">
-		$('html').css({'cursor':'url(gh.jpg), auto'});
+		var imgObj = null;
+		function moveDiv() {
+			var $span = $("#random");
+
+			$span.fadeOut(270, function() {
+				var maxLeft = $(window).width() - $span.width();
+				var maxTop = $(window).height() - $span.height();
+				var leftPos = Math.floor(Math.random() * (maxLeft + 1))
+				var topPos = Math.floor(Math.random() * (maxTop + 1))
+
+				$span.css({ left: leftPos, top: topPos }).fadeIn(1000);
+			});
+		};
+		moveDiv();
+		setInterval(moveDiv, 10);
 	</script>
 
 	<link rel="stylesheet" type="text/css" href="fallstyle.css">
-	<style type="text/css">
-	{ cursor: url(gh.jpg), auto; }
-</style>
-<title>
-	LLMS
-</title>
+	
+	<title>
+		LLMS
+	</title>
 </head>
 <body>
 	<div class="top">
@@ -37,21 +49,15 @@
 		</li>
 		<li><a href="about.php">About</a></li>
 
-		<li><a href="https://www.google.com/maps/place/Laurus+College+-+Santa+Maria/@34.922499,-120.4342317,17z/data=!3m1!4b1!4m5!3m4!1s0x80ec6ca63af620a3:0x199a7219e7450876!8m2!3d34.922499!4d-120.432043" target="popup" >Location</a></li>
-		<li><a href="https://hangouts.google.com/?hl=ko-US&ht=0&hcb=0&lm1=1547163981604&hs=84&hmv=1&ssc=WyIiLDAsbnVsbCxudWxsLG51bGwsW10sbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLDg0LG51bGwsbnVsbCxudWxsLFsxNTQ3MTYzOTgxNjA0XSxudWxsLG51bGwsW1tudWxsLG51bGwsW251bGwsIisxODA1MzU0NzcwMSJdXV0sbnVsbCxudWxsLHRydWUsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsW10sW10sbnVsbCxudWxsLG51bGwsW10sbnVsbCxudWxsLG51bGwsW10sbnVsbCxudWxsLFtdXQ..&action=chat&pn=%2B18053547701" target="popup" >Contact</a></li>
+		<li><a href="http://www.instagram.com/sungjin1027" target="popup" >Location</a></li>
+		<li><a href="http://www.instagram.com/sungjin1027" target="popup" >Contact</a></li>
 	</ul>
 </div>
 
-
-
 <script>
-
 	function submit_form() {
-
 		document.frm.target = 'ifrm';
-
-		document.frm.action = 'result.php';
-
+		document.frm.action = 'result_student.php';
 		document.frm.submit();
 
 	}
@@ -73,8 +79,7 @@
 
 <iframe name='ifrm' width='100%' height='200px' frameborder='2px'></iframe>
 <img src="http://m.hcinews.com/captcha.asp" id="imgCaptcha">
-<img src="gg1.jpg" style="width:500px; height: 500px;" id="imgCaptcha">
-
+<div id="container"> <span id="random"><img src="gg1.jpg" style="width:500px; height: 500px; visibility: hidden; z-index: 8"></span> </div>
 </body>
 
 

@@ -3,6 +3,8 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="fallstyle.css">
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	
+
 </head>
 <body>
 	<?php
@@ -17,39 +19,37 @@
 	$connectionInfo = array( "Database"=>$dbName, "UID" => $username, "PWD" => $password);
 	$conn = sqlsrv_connect( $hostname, $connectionInfo);
 
-	$sql = "UPDATE laptop SET 
-	SN = ?,
-	CPU = ?,
-	inches = ?,
-	MSOFFICE = ?,
-	studentId = ?,
-	returnDate = ?
-	WHERE id = ?";
+	
+// $sql = "SELECT * FROM student";
+// $sql = "SELECT * FROM student WHERE name LIKE 'John' ";
+
+	$sql = "INSERT INTO laptop(id,SN,CPU,inches,MSOFFICE,StudentId,returnDate) values(?,?,?,?
+	,?,?,?)";
 
 	$params = array(
+		$_POST["txtId"],
 		$_POST["txtSN"],
 		$_POST["txtCPU"],
 		$_POST["txtInches"],
 		$_POST["txtMSOFFICE"],
 		$_POST["txtStudentId"],
-		$_POST["txtreturnDate"],
-		$_POST["txtId"]
+		$_POST["txtReturnDate"]
 	);
-
 	$stmt = sqlsrv_query($conn,$sql,$params);
 
 	if( $stmt === false ) {
 
-		die( print_r( sqlsrv_errors(), true));
+	//die(print("error"))
+		die( print_r( "Record insert fail"));
 
 	}
 
 	else
 	{
-		echo "Record update successfully";
+		echo "Record insert successfully";
 
 	}
-	?>
 
+	?>
 </body>
 </html>

@@ -101,7 +101,7 @@ table tr
 
 	// }
 	?>
-	<form action="Insert-2.php" name="frmAdd" method="post">
+	<form action="Insert_student-2.php" name="frmAdd" method="post">
 
 	<table width="284" border="1">
 	<tr>

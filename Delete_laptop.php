@@ -57,19 +57,19 @@ table tr
 	$connectionInfo = array( "Database"=>$dbName, "UID" => $username, "PWD" => $password);
 	$conn = sqlsrv_connect( $hostname, $connectionInfo);
 
-	
 	for($i=0;$i<count($_POST["chkDel"]);$i++)
 	{
 		if($_POST["chkDel"][$i] != ""){
 			
-				
+			$strSQL = "DELETE FROM laptop WHERE id = ?";
+			$params = array($_POST["chkDel"][$i]);
+			$stmt = sqlsrv_query($conn,$strSQL,$params);	
 				
 		}
 
 	}
-	$strSQL = "DELETE FROM student WHERE id = ?";
-	$params = array($_POST["chkDel"][$i]);
-	$stmt = sqlsrv_query($conn,$strSQL,$params);
+	
+	echo $_POST["chkDel"][$i];
 
 	?>
 </body>
