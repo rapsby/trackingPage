@@ -61,11 +61,11 @@ table tr
 // $sql = "SELECT * FROM student";
 // $sql = "SELECT * FROM student WHERE name LIKE 'John' ";
 
-	$sql = "DELETE FROM student WHERE id=$_POST['txtId']";
+	$sql = "DELETE FROM student WHERE id=?";
 
-	// $params = array(
-	// 	$_POST["txtId"]
-	// 	);
+	$params = array(
+		$_POST["txtId"]
+		);
 
 	$stmt = sqlsrv_query($conn,$sql,$params);
 

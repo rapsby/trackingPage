@@ -61,23 +61,46 @@ table tr
 // $sql = "SELECT * FROM student";
 // $sql = "SELECT * FROM student WHERE name LIKE 'John' ";
 
-	$sql = "DELETE FROM student WHERE id = ?";
+	$sql = "INSERT INTO student(id,name,pro,phoneNumber,email,startdate,LSA,tag,Notes,DocuSign,Cpu,AddtoLed,Ordered,Onhand,LenApp,TimApp,PickUpDate,ShipDate,TrackingNumber,Received,Completed,MSOFFICE,ReturnReceived) values(?,?,?,?
+,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
 	$params = array(
 		$_POST["txtId"],
+		$_POST["txtName"],
+		$_POST["txtPro"],
+		$_POST["txtPhoneNumber"],
+		$_POST["txtEmail"],
+		$_POST["txtStartdate"],
+		$_POST["txtLSA"],
+		$_POST["txtTag"],
+		$_POST["txtNotes"],
+		$_POST["txtDocuSign"],
+		$_POST["txtCpu"],
+		$_POST["txtAddtoLed"],
+		$_POST["txtOrdered"],
+		$_POST["txtOnhand"],
+		$_POST["txtLenApp"],
+		$_POST["txtTimApp"],
+		$_POST["txtPickUpDate"],
+		$_POST["txtShipDate"],
+		$_POST["txtTrackingNumber"],
+		$_POST["Received"],
+		$_POST["txtCompleted"],
+		$_POST["txtMSOFFICE"],
+		$_POST["txtReturnReceived"]
 		);
 	$stmt = sqlsrv_query($conn,$sql,$params);
 
 	if( $stmt === false ) {
 
 	//die(print("error"))
-	die( print_r( "Record delete fail"));
+	die( print_r( "Record insert fail"));
 
 	}
 
 	else
 	{
-	echo "Record delete successfully";
+	echo "Record insert successfully";
 
 	}
 

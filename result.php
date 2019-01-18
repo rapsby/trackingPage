@@ -69,7 +69,6 @@
 	
 
 	$_SESSION['sql'] = $sql;
-	echo $_SESSION['sql'];
 
 	$stmt = sqlsrv_query($conn,$sql);
 	echo '<table class="phptable" border=1 >';
@@ -133,9 +132,7 @@
 	<h1></h1>
 	<form method='post' name='frm'>
 		<input value="Download" type="button" onclick="location.href='downloadexcel.php'">
-
 		<input type="button" value="Insert" onclick="location.href='Insert.php'">
-		<input type="submit" name="submit" value="Delete">
 	</form>
 	
 
