@@ -78,8 +78,10 @@
 </form>
 
 <iframe name='ifrm' width='100%' height='200px' frameborder='2px'></iframe>
+<!--
 <img src="http://m.hcinews.com/captcha.asp" id="imgCaptcha">
 <div id="container"> <span id="random"><img src="gg1.jpg" style="width:500px; height: 500px; visibility: hidden; z-index: 8"></span> </div>
+-->
 </body>
 
 
