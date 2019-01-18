@@ -99,7 +99,13 @@
 	<tr>
 	<th width="50">ReturnReceived</th>
 	<td><input type="text" name="txtReturnReceived" value="<?php echo $row[22];?>"></td></tr>
-
+	<th width="50">test radio checkbox</th>
+	<td>
+		<input type="radio" name="a">
+		<label for="a">Y</label>
+		<input type="radio" name="a">
+		<label for="a">N</label>
+	</td></tr>
 	</form>
 	
 

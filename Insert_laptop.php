@@ -9,7 +9,7 @@
 	
 	<form action="Insert_laptop-2.php" name="frmAdd" method="post">
 
-	<table width="284" border="1">
+	<table width="284" border="1" class="phptable">
 	<tr>
 	<th width="120">ID</th>
 	<td width="238">
