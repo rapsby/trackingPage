@@ -9,12 +9,9 @@
 	<link rel="stylesheet" type="text/css" href="fallstyle.css">
 	<style type="text/css">
 	{ cursor: url(gh.jpg), auto; }
-
-
-
 </style>
 <title>
-	Abnormal Cuisine
+	LLMS
 </title>
 </head>
 <body>
@@ -23,7 +20,7 @@
 		<p>
 			<a href="main.php" id="
 			current">
-		Delicious Abnormal Cuisine</a>
+		Laurus Laptop Management Service</a>
 	</p>
 </div>
 <div class="menubar">
@@ -61,17 +58,22 @@
 
 </script>
 
-
+<div align = "right"> Student data </div>
 <form method='post' name='frm' style="text-align: right">
 
 	<input type=text name=name>
 
 	<input type=button value='Search' onclick='submit_form()'>
+	<br/>
+	<br/>
+	<input type=button value='laptop' class="togglebutton" 
+	onclick="location.href='laptop.php'">
 
 </form>
 
 <iframe name='ifrm' width='100%' height='200px' frameborder='2px'></iframe>
 <img src="http://m.hcinews.com/captcha.asp" id="imgCaptcha">
+<img src="gg1.jpg" style="width:500px; height: 500px;" id="imgCaptcha">
 
 </body>
 

@@ -7,7 +7,7 @@
 
 	</style>
 	<title>
-		Abnormal Cuisine
+		Laurus Service
 	</title>
 </head>
 <body>
@@ -16,7 +16,7 @@
 	<p>
 		<a href="main.php" id="
 		current">
-		 Delicious Abnormal Cuisine</a>
+		Laurus Laptop Management Service</a>
 	</p>
 </div>
 <div class="menubar">

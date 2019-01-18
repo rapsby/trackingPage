@@ -104,7 +104,7 @@
 		$_POST["txtPickUpDate"],
 		$_POST["txtShipDate"],
 		$_POST["txtTrackingNumber"],
-		$_POST["Received"],
+		$_POST["txtReceived"],
 		$_POST["txtCompleted"],
 		$_POST["txtMSOFFICE"],
 		$_POST["txtReturnReceived"],

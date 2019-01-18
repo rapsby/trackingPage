@@ -61,26 +61,38 @@ table tr
 // $sql = "SELECT * FROM student";
 // $sql = "SELECT * FROM student WHERE name LIKE 'John' ";
 
-	$sql = "DELETE FROM student WHERE id=?";
+	// $sql = "DELETE FROM student WHERE id=13";
 
-	$params = array(
-		$_POST["txtId"]
-		);
+	// $params = array(
+	// 	$_POST["txtId"]
+	// 	);
 
-	$stmt = sqlsrv_query($conn,$sql,$params);
+	// $stmt = sqlsrv_query($conn,$sql,$params);
 
-	if( $stmt === false ) {
+	// if( $stmt === false ) {
 
-	//die(print("error"))
-	die( print_r( "Record Delete fail"));
+	// //die(print("error"))
+	// die( print_r( "Record Delete fail"));
 
-	}
+	// }
 
-	else
+	// else
+	// {
+	// echo "Record Delete successfully";
+
+	// }
+	for($i=0;$i<count($_POST["chkDel"]);$i++)
 	{
-	echo "Record Delete successfully";
-
+		if($_POST["chkDel"][$i] != ""){
+			
+			//$strSQL = "DELETE FROM student WHERE id = $_POST['chkDel'][$i]";
+			echo $_POST['chkDel'][$i];
+			//$stmt = sqlsrv_query($conn,$strSQL);
+				
+		}
 	}
+
+	
 
 	?>
 </body>

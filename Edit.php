@@ -154,11 +154,8 @@
 	
 <h1></h1>
 <input type="submit" name="submit" value="Save">
-<input type="submit" value="Delete" onclick="location.href='Delete.php'">
+<!-- <input type="submit" value="Delete"> -->
 </form>
-
-
-
 
 </body>
 </html>

@@ -16,7 +16,7 @@ $conn = sqlsrv_connect( $hostname, $connectionInfo);
 
 header( "Content-type: application/vnd.ms-excel; charset=utf-8");
 
-header( "Content-Disposition: attachment; filename = excel_test.xls" );     //filename = 저장되는 파일명을 설정합니다.
+header( "Content-Disposition: attachment; filename = student_imformation_table.xls" );     //filename = 저장되는 파일명을 설정합니다.
 
 header( "Content-Description: PHP4 Generated Data" );
 

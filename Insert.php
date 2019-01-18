@@ -115,6 +115,11 @@ table tr
 	<input type="text" name="txtName">
 	</td></tr>
 	<tr>
+	<th width="120">pro</th>
+	<td width="238">
+	<input type="text" name="txtPro">
+	</td></tr>
+	<tr>
 	<th width="120">phoneNumber</th>
 	<td><input type="text" name="txtPhoneNumber"></td></tr>
 	<th width="120">email</th>
@@ -135,7 +140,7 @@ table tr
 	<th width="120">DocuSign</th>
 	<td><input type="text" name="txtDocuSign"></td></tr>
 	<tr>
-	<th width="120">Cpu</th>
+	<th width="120">CPU</th>
 	<td><input type="text" name="txtCpu"></td></tr>
 	<tr>
 	<th width="120">AddtoLed</th>
