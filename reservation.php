@@ -94,17 +94,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 echo $name;
 echo $studentNumber;
 
-$sql = "SELECT COUNT(*) FROM student 
-WHERE name='$name' and StudentNumber='$studentNumber' and Completed='Y'";
+$sql = "SELECT COUNT(*) FROM student WHERE (name LIKE '%".$name."%') and StudentNumber="$studentNumber" and  Completed='Y'";
 
+//$sql = "SELECT * FROM student";
 $stmt = sqlsrv_query($conn,$sql);
 
+if ($stmt==0) {
+    echo 'No records found';
+} else {
+	while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC){
 
-while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC) ) {
-	echo $row[0];
-	echo $row[1];
 
+	}
+    
 }
+
+// while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC) ) {
+// echo $row[0];
+// echo $row[1];
+// 	}
+
+
 
 ?>
 
