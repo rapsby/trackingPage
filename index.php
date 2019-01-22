@@ -21,16 +21,16 @@
 	</script>
 	<style>
 
-	</style>
-	<link rel="stylesheet" type="text/css" href="fallstyle.css">
-	
-	<title>
-		LLMS
-	</title>
+</style>
+<link rel="stylesheet" type="text/css" href="fallstyle.css">
+
+<title>
+	LLMS
+</title>
 </head>
 <body>
 	<div class="top" style="position:relative;">
- 		<p></p>
+		<p></p>
 		<p>
 			<a href="index.php" id="
 			current">
@@ -58,22 +58,20 @@
 	}
 
 </script>
+<div align = "right"> Student data 
 
-<div align = "right"> Student data </div>
-<form method='post' name='frm' style="text-align: right">
-
-	<input type=text name=name>
-
-	<input type=button value='Search' onclick='submit_form()'>
-	<br/>
-	<br/>
-<a href=laptop.php>
-<img src=Laptop_image.png height="55" width="62">
-</a>
+	
+	<form method='post' name='frm' style="text-align: right">
+		<input type=text name=name placeholder="Student name" >
+		<input type=button value='Search' onclick='submit_form()'>
+		<br/>
+		<br/>
+		<a href=laptop.php>
+			<img src=Laptop_image.png height="55" width="62">
+		</a>
+</div>
 <!-- <input type=button value='laptop' class="togglebutton" 
 	onclick="location.href='laptop.php'"> -->
-
-
 </form>
 
 <iframe name='ifrm' width='100%' height='200px' frameborder='2px'></iframe>

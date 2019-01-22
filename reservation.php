@@ -70,6 +70,7 @@ echo $studentNumber;
 		<br/>
 		<input type=text name=studentNumber placeholder="Student Number" minlength=9>
 		<br/>
+		<h1></h1>
 		<input type="submit" name="submit" value="Submit" />
 		<br/>
 		<input type=button value='Check' onclick='submit_form()'>

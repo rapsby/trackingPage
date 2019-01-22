@@ -31,28 +31,19 @@
 	<div class="top">
 		<p></p>
 		<p>
-			<a href="main.php" id="current">
+			<a href="laptop.php" id="current">
 			Laurus Laptop Management Service</a>
 		</p>
 	</div>
-	<div class="menubar">
-		<ul>
-			<li><a href="#" id="current">Menu</a>
-				<ul>
-					<li><a href="menu/hamburger.php">Hamburger</a></li>
-					<li><a href="menu/pizza.php">Pizza</a></li>
-					<li><a href="menu/pasta.php">Pasta</a></li>
-					<li><a href="menu/salad.php">Salad</a></li>
-					<li><a href="menu/dessert.php">Dessert</a></li>
-					<li><a href="menu/drink.php">Drink</a></li>
-				</ul>
-			</li>
-			<li><a href="about.php">About</a></li>
+<div class="menubar">
+	<ul>
+		<li><a href="reservation.php" id="current">Reservation</a></li>
+		<li><a href="return.php">Return</a></li>
 
-			<li><a href="http://www.instagram.com/sungjin1027" target="popup" >Location</a></li>
-			<li><a href="http://www.instagram.com/sungjin1027" target="popup" >Contact</a></li>
-		</ul>
-	</div>
+		<li><a href="http://www.instagram.com/sungjin1027" target="popup" >Location</a></li>
+		<li><a href="http://www.instagram.com/sungjin1027" target="popup" >Contact</a></li>
+	</ul>
+</div>
 
 
 
@@ -72,8 +63,7 @@
 
 	<div align = "right"> Laptop data </div>
 	<form method='post' name='frm' style="text-align: right">
-
-		<input type=text name=cpu>
+		<input type=text name=cpu placeholder="CPU name">
 
 		<input type=button value='Search' onclick='submit_form()'>
 		<br/>

@@ -117,6 +117,7 @@
 	
 <h1></h1>
 <input type="submit" name="submit" value="Save">
+<input type="button" name="Closeseseses" value="Close" onclick="javascript:window.close();">
 <!-- <input type="submit" value="Delete"> -->
 
 </body>

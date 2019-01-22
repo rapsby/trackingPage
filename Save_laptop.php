@@ -48,10 +48,11 @@
 
 	else
 	{
-		echo "Record update successfully";
+		echo "Record update successfully<br/>";
+		
 
 	}
 	?>
-
+<input type="button" name="Closeseseses" value="Close" onclick="javascript:window.close();">
 </body>
 </html>
