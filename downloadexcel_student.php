@@ -34,6 +34,7 @@ $EXCEL_FILE = "
 
 <th>id</th>
 <th>name</th>
+<th>StudentNumber</th>
 <th>pro</th>
 <th>phoneNumber</th>
 <th>email</th>
@@ -98,6 +99,7 @@ while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC) ) {
 	<td>$row[20]</td>
 	<td>$row[21]</td>
 	<td>$row[22]</td>
+	<td>$row[23]</td>
 	</tr>
 
 	";

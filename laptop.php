@@ -78,11 +78,14 @@
 		<input type=button value='Search' onclick='submit_form()'>
 		<br/>
 		<br/>
-		<input type=button value='Student' class="togglebutton" 
-		onclick="location.href='index.php'">
+		<!-- <input type=button value='Student' class="togglebutton" 
+		onclick="location.href='index.php'"> -->
+		<a href=index.php>
+		<img src=Student_image_1.png  height="55" width="60">
+		</a>
 	</form>
 
-	<iframe name='ifrm' width='100%' height='200px' frameborder='2px'></iframe>
+	<iframe name='ifrm' width='100%' height='200px' frameborder=0 framespacing=0 marginheight=0 marginwidth=0 scrolling=yes vspace=0></iframe>
 	<img src="http://m.hcinews.com/captcha.asp" id="imgCaptcha" onclick="showImage();">
 <!--
 	<div id="container"> <span id="random"><img src="sj.jpg" style="width:100%; height: 100%; visibility: visible; z-index: 8"></span>

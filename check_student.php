@@ -6,20 +6,7 @@
 	<script type="text/javascript" src="html2CSV.js" ></script>
 	<script type="text/javascript">
 	// make tr clickable
-	jQuery(document).ready(function($) {
-		$(".clickable-row").click(function() {
-			var link =  $(this).data("href");
-			var w = window.open(link, "popupWindow", "width=600, height=400, scrollbars=yes");
-			var $w = $(w.document.body);
-			$w.html("<textarea></textarea>");
-		});
-	});
 
-	function submit_form() {
-		document.frm.target = 'ifrm';
-		document.frm.action = 'downloadexcel_student.php';
-		document.frm.submit();
-	}
 </script>
 </head>
 <body>
@@ -29,6 +16,7 @@
 
 	<?php
 	$name = $_POST["name"];
+	$studentNumber = $_POST["studentNumber"];
 	$username = 'FALL1';
 	$password = 'qqqqqq1!';
 	$hostname = '10.1.10.24';
@@ -37,7 +25,8 @@
 	$connectionInfo = array( "Database"=>$dbName, "UID" => $username, "PWD" => $password);
 	$conn = sqlsrv_connect( $hostname, $connectionInfo);
 	
-	$sql = "SELECT * FROM student WHERE name LIKE '%".$name."%' ";
+	$sql = "SELECT * FROM student 
+	WHERE name LIKE '%".$name."%' and studentNumber="$studentNumber" ";
 
 	$_SESSION['sql'] = $sql;
 	
@@ -66,7 +55,7 @@
 		<th>  </th>
 		<th>ID</th>
 		<th>NAME</th>
-		<th>student Number</th>
+		<th>Program</th>
 		<th>Phone Number</th>
 		<th>email</th>
 		</tr>";
@@ -78,8 +67,8 @@
 		<td>$row[0]</td>
 		<td>$row[1]</td>
 		<td>$row[2]</td>
+		<td>$row[3]</td>
 		<td>$row[4]</td>
-		<td>$row[5]</td>
 
 		</tr>";
 	}

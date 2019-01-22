@@ -52,6 +52,9 @@
 	<tr>
 	<th width="50">returnDate</th>
 	<td><input type="text" name="txtreturnDate" value="<?php echo $row[6];?>"></td></tr>
+	<tr>	
+	<th width="50">Available</th>
+	<td><input type="text" name="txtAvailable" value="<?php echo $row[7];?>"></td></tr>
 	</form>
 
 

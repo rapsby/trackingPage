@@ -2,26 +2,14 @@
 <html>
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script type="text/javascript">
-		var imgObj = null;
-		function moveDiv() {
-			var $span = $("#random");
-
-			$span.fadeOut(270, function() {
-				var maxLeft = $(window).width() - $span.width();
-				var maxTop = $(window).height() - $span.height();
-				var leftPos = Math.floor(Math.random() * (maxLeft + 1))
-				var topPos = Math.floor(Math.random() * (maxTop + 1))
-
-				$span.css({ left: leftPos, top: topPos }).fadeIn(1000);
-			});
-		};
-		moveDiv();
-		setInterval(moveDiv, 10);
-	</script>
-
 	<link rel="stylesheet" type="text/css" href="fallstyle.css">
-	
+	<script>
+	function submit_form() {
+		document.frm.target = 'ifrm';
+		document.frm.action = 'check_student.php';
+		document.frm.submit();
+	}
+</script>
 	<title>
 		LLMS
 	</title>
@@ -44,35 +32,55 @@
 		<li><a href="http://www.instagram.com/sungjin1027" target="popup" >Contact</a></li>
 	</ul>
 </div>
+<?php
+$asd="";
+?>
 
-<script>
-	function submit_form() {
-		document.frm.target = 'ifrm';
-		document.frm.action = 'result_student.php';
-		document.frm.submit();
 
-	}
+<?php
+$name="";
+$studentNumber="";
 
-</script>
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+   if (empty($_POST["name"])) {
+      $name = "name is required";
+   }
+   else {
+      $name = test_input($_POST["name"]);
+   }
+   if (empty($_POST["studentNumber"])) {
+      $studentNumber = "studentNumber is required";
+   }
+   else {
+      $studentNumber = test_input($_POST["studentNumber"]);
+   }
+}
+echo $name;
+echo $studentNumber;
 
-<div align = "right"> Student data </div>
-<form method='post' name='frm' style="text-align: right">
+?>
 
-	<input type=text name=name>
 
-	<input type=button value='Search' onclick='submit_form()'>
-	<br/>
-	<br/>
-	<input type=button value='laptop' class="togglebutton" 
-	onclick="location.href='laptop.php'">
 
-</form>
 
-<iframe name='ifrm' width='100%' height='200px' frameborder='2px'></iframe>
-<!--
-<img src="http://m.hcinews.com/captcha.asp" id="imgCaptcha">
-<div id="container"> <span id="random"><img src="gg1.jpg" style="width:500px; height: 500px; visibility: hidden; z-index: 8"></span> </div>
--->
+<div style = "padding:20px">
+	<form method='post' name='frm' >
+		
+		<input type=text name=name placeholder="Name" minlength=2>
+		<br/>
+		<input type=text name=studentNumber placeholder="Student Number" minlength=9>
+		<br/>
+		<input type="submit" name="submit" value="Submit" />
+		<br/>
+		<input type=button value='Check' onclick='submit_form()'>
+		<br/>
+		<br/>
+
+	</form>
+</div>
+
+<iframe name='ifrm' width='100%' height='200px' frameborder=0 framespacing=0 marginheight=0 marginwidth=0 scrolling=yes vspace=0></iframe>
+
 </body>
 
 

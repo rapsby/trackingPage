@@ -33,6 +33,7 @@
 	<th>MSOFFICE</th>
 	<th>StudentId</th>
 	<th>returnDate</th>
+	<th>Available</th>
 	</tr>";
 
 	while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC) ) {
@@ -44,6 +45,7 @@
 		<td>$row[4]</td>
 		<td>$row[5]</td>
 		<td>$row[6]</td>
+		<td>$row[7]</td>
 		</tr>";
 	
 

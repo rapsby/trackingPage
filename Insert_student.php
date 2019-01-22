@@ -115,6 +115,11 @@ table tr
 	<input type="text" name="txtName">
 	</td></tr>
 	<tr>
+	<th width="120">studentNumber</th>
+	<td width="238">
+	<input type="text" name="txtStudentNumber">
+	</td></tr>
+	<tr>
 	<th width="120">pro</th>
 	<td width="238">
 	<input type="text" name="txtPro">

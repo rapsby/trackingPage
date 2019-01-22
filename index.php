@@ -19,7 +19,9 @@
 		moveDiv();
 		setInterval(moveDiv, 10);
 	</script>
+	<style>
 
+	</style>
 	<link rel="stylesheet" type="text/css" href="fallstyle.css">
 	
 	<title>
@@ -28,11 +30,12 @@
 </head>
 <body>
 	<div class="top">
-		<p></p>
+ 		<p></p>
 		<p>
 			<a href="index.php" id="
 			current">
 		Laurus Laptop Management Service</a>
+		
 	</p>
 </div>
 <div class="menubar">
@@ -63,8 +66,12 @@
 	<input type=button value='Search' onclick='submit_form()'>
 	<br/>
 	<br/>
-	<input type=button value='laptop' class="togglebutton" 
-	onclick="location.href='laptop.php'">
+<a href=laptop.php>
+<img src=Laptop_image.png height="55" width="62">
+</a>
+<!-- <input type=button value='laptop' class="togglebutton" 
+	onclick="location.href='laptop.php'"> -->
+
 
 </form>
 

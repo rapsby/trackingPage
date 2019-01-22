@@ -73,6 +73,7 @@
 	echo "<tr>
 	<th>ID</th>
 	<th>NAME</th>
+	<th>StudentNumber</th>
 	<th>Program</th>
 	<th>Start Date</th>
 	<th>LSA</th>
@@ -120,6 +121,7 @@
 		<td>$row[18]</td>
 		<td>$row[19]</td>
 		<td>$row[20]</td>
+		<td>$row[21]</td>
 		</tr>";
 	
 

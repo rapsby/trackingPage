@@ -18,26 +18,26 @@
 
 </script>
 <style>
-table tr:hover { 
+.phptable tr:hover { 
 	background-color: #fadada;
 }
-table{
+.phptable{
 	border-collapse: collapse;
-	width: 30%;
+	width: 100%;
 	color: #d96459;
 	font-family: monospace;
 	text-align: left;
 }
 
-table th{
+.phptable th{
 	background-color: #d96459;
 	color: white;
 	font-size: 11px;
 }
-table td{
+.phptable td{
 	font-size: 10px;
 }
-table tr
+.phptable tr
 {
 	text-decoration:none ;
 }
@@ -57,18 +57,39 @@ table tr
 	$connectionInfo = array( "Database"=>$dbName, "UID" => $username, "PWD" => $password);
 	$conn = sqlsrv_connect( $hostname, $connectionInfo);
 
-	
-// $sql = "SELECT * FROM student";
-// $sql = "SELECT * FROM student WHERE name LIKE 'John' ";
+//$sql = "SELECT * FROM student";
+//$sql = "SELECT * FROM student WHERE name LIKE 'John' ";
 
-	$sql = "INSERT INTO student(id,name,studentNumber,pro,phoneNumber,email,startdate,LSA,tag,Notes,DocuSign,Cpu,AddtoLed,Ordered,Onhand,LenApp,TimApp,PickUpDate,ShipDate,TrackingNumber,Received,Completed,MSOFFICE,ReturnReceived) values(?,?,?,?
-,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
-	$params = array(
-		$_POST["txtId"],
-		$_POST["txtName"],
+	$sql = "UPDATE student SET 
+	 name = ?,
+	 pro = ?,
+	 studentNumber = ?,
+	 phoneNumber = ?,
+	 email = ?,
+	 startdate = ?,
+	 LSA = ? ,
+	 tag = ? ,
+	 Notes = ?,
+	 DocuSign = ?,
+	 Cpu = ?,
+	 AddtoLed = ?,
+	 Ordered = ?,
+	 Onhand = ?,
+	 LenApp = ?,
+	 TimApp = ?,
+	 PickUpDate = ?,
+	 ShipDate = ?,
+	 TrackingNumber = ?,
+	 Received = ?,
+	 Completed = ?,
+	 MSOFFICE = ?,
+	 ReturnReceived = ?
+	 WHERE id = ?";
+
+	$params = array($_POST["txtName"]
+		,$_POST["txtPro"],
 		$_POST["txtStudentNumber"],
-		$_POST["txtPro"],
 		$_POST["txtPhoneNumber"],
 		$_POST["txtEmail"],
 		$_POST["txtStartdate"],
@@ -88,23 +109,23 @@ table tr
 		$_POST["txtReceived"],
 		$_POST["txtCompleted"],
 		$_POST["txtMSOFFICE"],
-		$_POST["txtReturnReceived"]
+		$_POST["txtReturnReceived"],
+		$_POST["txtId"]
 		);
 	$stmt = sqlsrv_query($conn,$sql,$params);
 
 	if( $stmt === false ) {
 
-	//die(print("error"))
-	die( print_r( "Record insert fail"));
+	die( print_r( sqlsrv_errors(), true));
 
 	}
 
 	else
 	{
-	echo "Record insert successfully";
+	echo "Record update successfully";
 
 	}
-
 	?>
+
 </body>
 </html>

@@ -62,14 +62,13 @@ table tr
 	{
 		if($_POST["chkDel"][$i] != ""){
 			
-				
+			$strSQL = "DELETE FROM student WHERE id = ?";
+			$params = array($_POST["chkDel"][$i]);
+			$stmt = sqlsrv_query($conn,$strSQL,$params);	
 				
 		}
 
 	}
-	$strSQL = "DELETE FROM student WHERE id = ?";
-	$params = array($_POST["chkDel"][$i]);
-	$stmt = sqlsrv_query($conn,$strSQL,$params);
 
 	?>
 </body>

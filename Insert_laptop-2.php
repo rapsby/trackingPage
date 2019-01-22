@@ -23,8 +23,8 @@
 // $sql = "SELECT * FROM student";
 // $sql = "SELECT * FROM student WHERE name LIKE 'John' ";
 
-	$sql = "INSERT INTO laptop(id,SN,CPU,inches,MSOFFICE,StudentId,returnDate) values(?,?,?,?
-	,?,?,?)";
+	$sql = "INSERT INTO laptop(id,SN,CPU,inches,MSOFFICE,StudentId,returnDate,available) values(?,?,?,?
+	,?,?,?,?)";
 
 	$params = array(
 		$_POST["txtId"],
@@ -33,7 +33,8 @@
 		$_POST["txtInches"],
 		$_POST["txtMSOFFICE"],
 		$_POST["txtStudentId"],
-		$_POST["txtReturnDate"]
+		$_POST["txtReturnDate"],
+		$_POST["txtAvailable"]
 	);
 	$stmt = sqlsrv_query($conn,$sql,$params);
 

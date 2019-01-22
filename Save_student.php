@@ -21,6 +21,7 @@
 
 	$sql = "UPDATE student SET 
 	name = ?,
+	studentNumber = ?,
 	pro = ?,
 	phoneNumber = ?,
 	email = ?,
@@ -46,6 +47,7 @@
 
 	$params = array(
 		$_POST["txtName"],
+		$_POST["txtStudentNumber"],
 		$_POST["txtPro"],
 		$_POST["txtPhoneNumber"],
 		$_POST["txtEmail"],

@@ -23,7 +23,8 @@
 	inches = ?,
 	MSOFFICE = ?,
 	studentId = ?,
-	returnDate = ?
+	returnDate = ?,
+	available = ?
 	WHERE id = ?";
 
 	$params = array(
@@ -33,6 +34,7 @@
 		$_POST["txtMSOFFICE"],
 		$_POST["txtStudentId"],
 		$_POST["txtreturnDate"],
+		$_POST["txtAvailable"],
 		$_POST["txtId"]
 	);
 

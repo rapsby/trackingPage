@@ -37,6 +37,8 @@
 	<th width="120">returnDate</th>
 	<td><input type="text" name="txtReturnDate"></td></tr>
 	<tr>
+	<th width="120">Available</th>
+	<td><input type="text" name="txtAvailable"></td></tr>	
 	</table>
 
 	<h1></h1>
