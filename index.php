@@ -29,7 +29,7 @@
 	</title>
 </head>
 <body>
-	<div class="top">
+	<div class="top" style="position:relative;">
  		<p></p>
 		<p>
 			<a href="index.php" id="
@@ -37,6 +37,7 @@
 		Laurus Laptop Management Service</a>
 		
 	</p>
+	
 </div>
 <div class="menubar">
 	<ul>

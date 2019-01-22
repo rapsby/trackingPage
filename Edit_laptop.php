@@ -54,7 +54,18 @@
 	<td><input type="text" name="txtreturnDate" value="<?php echo $row[6];?>"></td></tr>
 	<tr>	
 	<th width="50">Available</th>
-	<td><input type="text" name="txtAvailable" value="<?php echo $row[7];?>"></td></tr>
+	<?php
+		if($row[7]==="Y")
+			echo "hi";
+		
+	?>
+	<td>
+		<input type="radio" name="txtAvailable" checked>
+		<label for="txtAvailable">Y</label>
+		<input type="radio" name="txtAvailable" checked>
+		<label for="txtAvailable">N</label>
+	</td>
+</tr>
 	</form>
 
 
