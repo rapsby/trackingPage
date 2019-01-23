@@ -18,8 +18,7 @@
 	<div class="top">
 		<p></p>
 		<p>
-			<a href="index.php" id="
-			current">
+			<a href="index.php" id="current">
 		Laurus Laptop Management Service</a>
 	</p>
 </div>
@@ -45,8 +44,6 @@
 		<input type=text name=studentNumber placeholder="Student Number" minlength=9>
 		<br/>
 		<h1></h1>
-		<input type="submit" name="submit" value="Submit" />
-		<br/>
 		<input type=button value='Check' onclick='submit_form()'>
 		<br/>
 		<br/>
@@ -54,13 +51,9 @@
 	</form>
 </div>
 
-<?php
-$asd="";
-?>
 
 
 <?php
-$id = $_POST["id"];
 $username = 'FALL1';
 $password = 'qqqqqq1!';
 $hostname = '10.1.10.24';
@@ -71,56 +64,11 @@ $serverName = "10.1.10.24\\FALL1";
 $connectionInfo = array( "Database"=>$dbName, "UID" => $username, "PWD" => $password);
 $conn = sqlsrv_connect( $hostname, $connectionInfo);
 
-
-
-
-$name="";
-$studentNumber="";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	if (empty($_POST["name"])) {
-		$name = "name is required";
-	}
-	else {
-		$name = test_input($_POST["name"]);
-	}
-	if (empty($_POST["studentNumber"])) {
-		$studentNumber = "studentNumber is required";
-	}
-	else {
-		$studentNumber = test_input($_POST["studentNumber"]);
-	}
-}
-echo $name;
-echo $studentNumber;
-
-$sql = "SELECT COUNT(*) FROM student WHERE (name LIKE '%".$name."%') and StudentNumber="$studentNumber" and  Completed='Y'";
-
-//$sql = "SELECT * FROM student";
-$stmt = sqlsrv_query($conn,$sql);
-
-if ($stmt==0) {
-    echo 'No records found';
-} else {
-	while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC){
-
-
-	}
-    
-}
-
-// while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC) ) {
-// echo $row[0];
-// echo $row[1];
-// 	}
-
-
-
 ?>
 
 
 
-<iframe name='ifrm' width='100%' height='200px' frameborder=0 framespacing=0 marginheight=0 marginwidth=0 scrolling=yes vspace=0></iframe>
+<iframe name='ifrm' width='100%' height='200px' frameborder=2px</iframe>
 
 </body>
 
