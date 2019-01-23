@@ -22,16 +22,17 @@
 
 	// $sql = "SELECT COUNT(*) FROM student WHERE name LIKE '%".$name."%' AND studentNumber=$studentNumber AND  Received='Y' and Completed='N' ";
 
-	$sql_2 = "SELECT COUNT(*) FROM student AS e INNER JOIN reservation AS u ON e.trackingNumber = u.trackingNumber";
+	$sql = "SELECT COUNT(*) FROM student as a JOIN reservation as b on a.trackingNumber = b.trackingNumber";
 	
-	$stmt = sqlsrv_query($conn,$sql_2);
+	$stmt = sqlsrv_query($conn,$sql);
 	$bool = "";
 	while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC) ) {
 		$bool = $row[0];
 	}
 	if($bool == 1)
 	{
-		include "result_laptop23.php";
+		echo "success!";
+		// include "result_laptop23.php";
 	}
 	else
 	{

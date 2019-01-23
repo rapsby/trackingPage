@@ -22,18 +22,16 @@
 
 	$sql = "UPDATE laptop SET CPU='i999', Inches='167' WHERE id = $id";
 	$stmt = sqlsrv_query($conn,$sql);
-	$sql = "SELECT rownum FROM (SELECT id FROM reservation order BY id DESC) WHERE rownum=1";
+	$sql = "SELECT * FROM reservation order BY id DESC";
+	$stmt = sqlsrv_query($conn,$sql);
 	$row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC);
-	echo $sql;
+	$id = $row[0];
+	$trackingNumber = $row[1];
 
+	$trackingNumber = str_pad($id,"5","0",STR_PAD_LEFT);
 
-
-
-
-
-	echo "okey"
-
-
+	$trackingNumber =date("ymd").$trackingNumber;
+	echo $trackingNumber;
 	
 	?>
 
