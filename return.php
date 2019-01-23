@@ -6,7 +6,7 @@
 	<script>
 		function submit_form() {
 			document.frm.target = 'ifrm';
-			document.frm.action = 'check_student_reservation.php';
+			document.frm.action = 'check_student_return.php';
 			document.frm.submit();
 		}
 	</script>
@@ -36,7 +36,7 @@
 
 
 <div style = "padding:20px">
-	<h3>Reservation</h3>
+	<h3>Return</h3>
 	<form method='post' name='frm' >
 		
 		<input type=text name=name placeholder="Name" minlength=2>

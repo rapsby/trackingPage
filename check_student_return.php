@@ -20,19 +20,22 @@
 	$connectionInfo = array( "Database"=>$dbName, "UID" => $username, "PWD" => $password);
 	$conn = sqlsrv_connect( $hostname, $connectionInfo);
 
-	$sql = "SELECT COUNT(*) FROM student WHERE name LIKE '%".$name."%' AND studentNumber=$studentNumber AND  Completed='Y'";
-	$stmt = sqlsrv_query($conn,$sql);
+	// $sql = "SELECT COUNT(*) FROM student WHERE name LIKE '%".$name."%' AND studentNumber=$studentNumber AND  Received='Y' and Completed='N' ";
+
+	$sql_2 = "SELECT COUNT(*) FROM student AS e INNER JOIN reservation AS u ON e.trackingNumber = u.trackingNumber";
+	
+	$stmt = sqlsrv_query($conn,$sql_2);
 	$bool = "";
 	while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC) ) {
 		$bool = $row[0];
 	}
 	if($bool == 1)
 	{
-		echo 'true';
+		include "result_laptop23.php";
 	}
 	else
 	{
-		echo 'Invalid name or student number.';
+		echo "<script>alert('Invalid name or student number or already return');</script>";
 	}
 	?>
 
