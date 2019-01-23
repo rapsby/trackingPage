@@ -19,17 +19,21 @@
 	$connectionInfo = array( "Database"=>$dbName, "UID" => $username, "PWD" => $password);
 	$conn = sqlsrv_connect( $hostname, $connectionInfo);
 
-	$sql = "SELECT * FROM student as a join reservation as b ON a.trackingNumber =  b.trackingNumber
-			join laptop as c ON b.id = c.id";
+	$date = date("ymd");
 
+	$sql = "UPDATE reservation SET returnDate=$date WHERE id = $id";
+	
 	$stmt = sqlsrv_query($conn,$sql);
+
+	// $sql = "SELECT * FROM student as a join reservation as b ON a.trackingNumber =  b.trackingNumber
+	// 		join laptop as c ON b.id = c.id";
+
+	// $stmt = sqlsrv_query($conn,$sql);
 	$bool = "";
 	//}
 	while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC) ) {
 		$bool = $row[0];
-		if($row[0]==$id){
-			echo "correct id";
-		}
+		
 	}
 	// if($bool == 1)
 	// {	
