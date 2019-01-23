@@ -10,10 +10,8 @@
 <body>
 
 	<?php
-	session_start();
 	$name = $_POST["name"];
 	$studentNumber = $_POST["studentNumber"];
-	$_SESSION["studentNumber"];
 	$username = 'FALL1';
 	$password = 'qqqqqq1!';
 	$hostname = '10.1.10.24';
@@ -34,10 +32,13 @@
 	}
 	else
 	{
-		echo "<script>alert('Invalid name or student number. Or you already got a laptop.');</script>";
+		echo "<script>alert('Invalid name or student number.');</script>";
 	}
 	?>
 
+
+
+	
 
 </body>
 </html>

@@ -7,7 +7,7 @@
 	// make tr clickable
 	jQuery(document).ready(function($) {
 		$(".clickable-row").click(function() {
-			var r = confirm("Are you sure for reservation?");
+			var r = confirm("Are you sure for return?");
 			if(r == true){
 				var link =  $(this).data("href");
 				
@@ -24,6 +24,11 @@
 		});
 	});
 
+	function submit_form() {
+		document.frm.target = 'ifrm';
+		document.frm.action = 'downloadexcel.php';
+		document.frm.submit();
+	}
 </script>
 </head>
 <body>
@@ -34,6 +39,7 @@
 	?>
 
 	<?php
+	$name = $_POST["name"];
 	$username = 'FALL1';
 	$password = 'qqqqqq1!';
 	$hostname = '10.1.10.24';
@@ -42,34 +48,34 @@
 	$connectionInfo = array( "Database"=>$dbName, "UID" => $username, "PWD" => $password);
 	$conn = sqlsrv_connect( $hostname, $connectionInfo);
 	
-	$sql = "SELECT * FROM laptop WHERE Available='Y' ORDER BY CPU, INCHES";
+	$sql = "SELECT * FROM student WHERE Completed='N' AND name LIKE '%".$name."%'";
 	?>
 	
 	<?php
 	$stmt = sqlsrv_query($conn,$sql);
 	echo '<table class="phptable" border=1 >';
 	echo "<tr>
-	<th>SN</th>
-	<th>CPU</th>
-	<th>Inches</th>
-	<th>MSOFFICE</th>
-	<th>returnDate</th>
-	<th>Available</th>
+	<th>id</th>
+	<th>name</th>
+	<th>StudentNumber</th>
+	<th>TrackingNumber</th>
+	<th>Received</th>
+	<th>Completed</th>
 	</tr>";
 
 	while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC) ) {
+		// <tr class='clickable-row' data-href='reservationlaptop.php?id=$row[0]'>
 		echo "
-		<tr class='clickable-row' data-href='reservationlaptop.php?id=$row[0]'>
+		<tr class='clickable-row' data-href='returnlaptop.php?id=$row[0]'>
+		<td>$row[0]</td>
 		<td>$row[1]</td>
 		<td>$row[2]</td>
-		<td>$row[3]</td>
-		<td>$row[4]</td>
-		<td>$row[6]</td>
-		<td>$row[7]</td>
+		<td>$row[19]</td>
+		<td>$row[20]</td>
+		<td>$row[21]</td>
 		</tr>";
 	}
 	echo "</table>";
-
 	?>
 
 </body>

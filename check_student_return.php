@@ -10,6 +10,7 @@
 <body>
 
 	<?php
+	session_start();
 	$name = $_POST["name"];
 	$studentNumber = $_POST["studentNumber"];
 	$username = 'FALL1';
@@ -21,18 +22,24 @@
 	$conn = sqlsrv_connect( $hostname, $connectionInfo);
 
 	// $sql = "SELECT COUNT(*) FROM student WHERE name LIKE '%".$name."%' AND studentNumber=$studentNumber AND  Received='Y' and Completed='N' ";
-
-	$sql = "SELECT COUNT(*) FROM student as a JOIN reservation as b on a.trackingNumber = b.trackingNumber";
+	
+	// $sql = "SELECT COUNT(*) FROM student as a JOIN reservation as b on a.trackingNumber = b.trackingNumber";
+	// $sql = "SELECT COUNT(*) FROM student WHERE name LIKE '%".$name."%' AND studentNumber=$studentNumber AND  Completed='Y'";
+	// $sql = "SELECT COUNT(*) FROM student as a JOIN reservation as b on a.trackingNumber = b.trackingNumber";
+	$sql = "SELECT COUNT(*) FROM student a join reservation b on a.trackingNumber = b.trackingNumber WHERE name LIKE '%".$name."%' AND studentNumber=$studentNumber AND  Completed='N'";
 	
 	$stmt = sqlsrv_query($conn,$sql);
 	$bool = "";
+	//}
 	while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC) ) {
 		$bool = $row[0];
+		#echo $row[0];
 	}
 	if($bool == 1)
-	{
-		echo "success!";
-		// include "result_laptop23.php";
+	{	
+
+		#echo "success!";
+		include "result_laptop24.php";
 	}
 	else
 	{

@@ -38,10 +38,10 @@
 	$sql = "UPDATE laptop SET studentid=$sid, available='N' WHERE id = $id";
 	$stmt = sqlsrv_query($conn,$sql);
 
-	$sql = "UPDATE student SET Ordered='Y', Onhand='Y', PickUpDate=$date, ShipDate=$date, TrackingNumber=$trackingNumber, received='Y', completed='N', ReturnReceived=NULL WHERE id = $sid";
+	$sql = "UPDATE student SET Ordered='Y', Onhand='Y', PickUpDate=$date, ShipDate=$date, TrackingNumber=$trackingNumber, ReturnReceived=NULL WHERE id = $sid";
 	$stmt = sqlsrv_query($conn,$sql);
 
-	$sql = "INSERT INTO reservation VALUES ($rid, '$trackingNumber', $sid, $id, $date, null)";
+	$sql = "INSERT INTO reservation VALUES ($rid, '$trackingNumber', $sid, $id, $date, $returndate)";
 	$stmt = sqlsrv_query($conn,$sql);
 
 	$sql = "SELECT * FROM reservation WHERE id = $rid";
