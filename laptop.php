@@ -15,30 +15,26 @@
 
 				$span.css({ left: leftPos, top: topPos }).fadeIn(1000);
 			});
+			
 		};
 		moveDiv();
 		setInterval(moveDiv, 10);
 	</script>
-	<style>
 
-</style>
-<link rel="stylesheet" type="text/css" href="fallstyle.css">
-
+	<link rel="stylesheet" type="text/css" href="fallstyle.css">
+	
 <title>
 	LLMS
 </title>
 </head>
 <body>
-	<div class="top" style="position:relative;">
+	<div class="top">
 		<p></p>
 		<p>
-			<a href="index.php" id="
-			current">
-		Laurus Laptop Management Service</a>
-		
-	</p>
-	
-</div>
+			<a href="laptop.php" id="current">
+			Laurus Laptop Management Service</a>
+		</p>
+	</div>
 <div class="menubar">
 	<ul>
 		<li><a href="reservation.php" id="current">Reservation</a></li>
@@ -49,35 +45,41 @@
 	</ul>
 </div>
 
-<script>
-	function submit_form() {
-		document.frm.target = 'ifrm';
-		document.frm.action = 'result_student.php';
-		document.frm.submit();
 
-	}
 
-</script>
-<div align = "right"> Student data 
+	<script>
 
-	
+		function submit_form() {
+
+			document.frm.target = 'ifrm';
+
+			document.frm.action = 'result_laptop.php';
+
+			document.frm.submit();
+
+		}
+
+	</script>
+
+	<div align = "right"> Laptop data </div>
 	<form method='post' name='frm' style="text-align: right">
-		<input type=text name=name placeholder="Student name" >
+		<input type=text name=cpu placeholder="CPU name">
+
 		<input type=button value='Search' onclick='submit_form()'>
 		<br/>
 		<br/>
-		<a href=laptop.php>
-			<img src=Laptop_image.png height="55" width="62">
+		<!-- <input type=button value='Student' class="togglebutton" 
+		onclick="location.href='index.php'"> -->
+		<a href=index.php>
+		<img src=Student_image_1.png  height="55" width="60">
 		</a>
-</div>
-<!-- <input type=button value='laptop' class="togglebutton" 
-	onclick="location.href='laptop.php'"> -->
-</form>
+	</form>
 
-<iframe name='ifrm' width='100%' height='200px' frameborder='2px'></iframe>
+	<iframe name='ifrm' width='100%' height='200px' frameborder=0 framespacing=0 marginheight=0 marginwidth=0 scrolling=yes vspace=0></iframe>
+	<img src="http://m.hcinews.com/captcha.asp" id="imgCaptcha" onclick="showImage();">
 <!--
-<img src="http://m.hcinews.com/captcha.asp" id="imgCaptcha">
-<div id="container"> <span id="random"><img src="gg1.jpg" style="width:500px; height: 500px; visibility: hidden; z-index: 8"></span> </div>
+	<div id="container"> <span id="random"><img src="sj.jpg" style="width:100%; height: 100%; visibility: visible; z-index: 8"></span>
+	<span id="random"><img src="gg1.jpg" style="width:500px; height: 500px; visibility: visible; z-index: 8"></span> </div>
 -->
 </body>
 

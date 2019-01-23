@@ -44,6 +44,10 @@
 {
 	text-decoration:none ;
 }
+.inputtd {
+	pointer-events: none;
+	cursor: default;
+}
 </style>
 </head>
 <body>
@@ -66,14 +70,32 @@
 //$sql = "SELECT * FROM student WHERE name LIKE 'John' ";
 	
 	$sql = "SELECT * FROM student WHERE name LIKE '%".$name."%' ";
-	
 
 	$_SESSION['sql'] = $sql;
-	echo $_SESSION['sql'];
+	
+	?>
+	
+	<script language='JavaScript'>
+	function onDelete()
+	{
+	if(confirm('Do you want to delete ?')==true)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+	}
+	</script>
+
+	<form name="frmMain" action="Delete.php" method="post" OnSubmit="return onDelete();">
+	<?php
 
 	$stmt = sqlsrv_query($conn,$sql);
 	echo '<table class="phptable" border=1 >';
 	echo "<tr>
+	<th>  </th>
 	<th>ID</th>
 	<th>NAME</th>
 	<th>Program</th>
@@ -100,13 +122,21 @@
 	<th>MSOFFICE</th>
 	<th>ReturnReceived</th>
 	*/
+
 	while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC) ) {
-		echo "<tr class='clickable-row' data-href='studentinfo.php?id=$row[0]'>
+		echo "
+		<tr class='clickable-row' data-href='studentinfo.php?id=$row[0]'>
+		<td><input type='checkbox' name='chkDel[]' value=$row[0]>
+
+
+
+		</td>
 		<td>$row[0]</td>
 		<td>$row[1]</td>
 		<td>$row[2]</td>
 		<td>$row[3]</td>
 		<td>$row[4]</td>
+
 		</tr>";
 		/*
 		<td>$row[5]</td>
@@ -130,13 +160,16 @@
 	echo "</table>";
 	?>
 
+
 	<h1></h1>
 	<form method='post' name='frm'>
-		<input value="Download" type="button" onclick="location.href='downloadexcel.php'">
-
-		<input type="button" value="Insert" onclick="location.href='Insert.php'">
-		<input type="submit" name="submit" value="Delete">
+		<input type="button" value="Download"  onclick="location.href='downloadexcel.php'">
+		<input type="button" value="Insert" onclick ="location.href='Insert.php'">
+		<input type="submit" name = "btnDelete" value=Delete />
 	</form>
+
+
+
 	
 
 </body>

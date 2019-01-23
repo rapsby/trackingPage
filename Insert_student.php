@@ -101,7 +101,7 @@ table tr
 
 	// }
 	?>
-	<form action="Insert-2.php" name="frmAdd" method="post">
+	<form action="Insert_student-2.php" name="frmAdd" method="post">
 
 	<table width="284" border="1">
 	<tr>
@@ -113,6 +113,16 @@ table tr
 	<th width="120">name</th>
 	<td width="238">
 	<input type="text" name="txtName">
+	</td></tr>
+	<tr>
+	<th width="120">studentNumber</th>
+	<td width="238">
+	<input type="text" name="txtStudentNumber">
+	</td></tr>
+	<tr>
+	<th width="120">pro</th>
+	<td width="238">
+	<input type="text" name="txtPro">
 	</td></tr>
 	<tr>
 	<th width="120">phoneNumber</th>
@@ -135,7 +145,7 @@ table tr
 	<th width="120">DocuSign</th>
 	<td><input type="text" name="txtDocuSign"></td></tr>
 	<tr>
-	<th width="120">Cpu</th>
+	<th width="120">CPU</th>
 	<td><input type="text" name="txtCpu"></td></tr>
 	<tr>
 	<th width="120">AddtoLed</th>

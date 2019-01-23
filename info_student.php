@@ -3,49 +3,10 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="fallstyle.css">
 
-	<style>
-	.phptable tr:hover { 
-		background-color: #fadada;
-	}
-	.phptable{
-		border-collapse: collapse;
-		width: 100%;
-		color: #d96459;
-		font-family: monospace;
-		text-align: left;
-	}
-
-	.phptable th{
-		background-color: #d96459;
-		color: white;
-		font-size: 12px;
-	}
-	.phptable td{
-		font-size: 12px;
-	}
-	.phptable tr
-	{
-		text-decoration:none ;
-	}
-
-</style>
-<!--
-<style>
-
-.phptable{
-	background-color: yellow;
-	border: 1px solid #444444;
-	border-color: green;
-
-}
-</style>
--->
-
 </head>
 <body>
 
 	<?php
-
 
 
 
@@ -60,9 +21,6 @@
 	$connectionInfo = array( "Database"=>$dbName, "UID" => $username, "PWD" => $password);
 	$conn = sqlsrv_connect( $hostname, $connectionInfo);
 
-//$sql = "SELECT * FROM student";
-//$sql = "SELECT * FROM student WHERE name LIKE 'John' ";
-
 
 	$sql = "SELECT * FROM student WHERE id = $id ";
 	$stmt = sqlsrv_query($conn,$sql);
@@ -75,6 +33,8 @@
 	<th>NAME</th>
 	<th>StudentNumber</th>
 	<th>Program</th>
+	<th>PhoneNumber</th>
+	<th>email</th>
 	<th>Start Date</th>
 	<th>LSA</th>
 	<th>tag</th>
@@ -122,24 +82,17 @@
 		<td>$row[19]</td>
 		<td>$row[20]</td>
 		<td>$row[21]</td>
+		<td>$row[22]</td>
+		<td>$row[23]</td>
 		</tr>";
-	
+		
 
-	echo "</table>";
+		echo "</table>";
 
-	//$test = array($row[0],$row[1],$row[2]);
-	//$_POST["test"] = $test;
-	
-}
-	include "Edit.php";
+	}
+	include "Edit_student.php";
 	
 	?>
-
-	
-	<!-- <a href="Edit.php?id=<?php echo $row['id'];?>">Edit</a> -->
-
-
-
 
 </body>
 </html>

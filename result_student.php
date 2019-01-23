@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,7 +73,7 @@
 		<th>  </th>
 		<th>ID</th>
 		<th>NAME</th>
-		<th>Program</th>
+		<th>student Number</th>
 		<th>Phone Number</th>
 		<th>email</th>
 		</tr>";
@@ -78,13 +85,14 @@
 		<td>$row[0]</td>
 		<td>$row[1]</td>
 		<td>$row[2]</td>
-		<td>$row[3]</td>
 		<td>$row[4]</td>
+		<td>$row[5]</td>
 
 		</tr>";
 	}
 	echo "</table>";
 	?>
+
 
 	<h1></h1>
 	<form method='post' name='frm'>
@@ -92,6 +100,10 @@
 		<input type="button" value="Insert" onclick="location.href='Insert_student.php'">
 		<input type="submit" name = "btnDelete" value=Delete />
 	</form>
+
+
+
+	
 
 </body>
 </html>

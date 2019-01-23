@@ -16,7 +16,7 @@ $conn = sqlsrv_connect( $hostname, $connectionInfo);
 
 header( "Content-type: application/vnd.ms-excel; charset=utf-8");
 
-header( "Content-Disposition: attachment; filename = excel_test.xls" );     //filename = 저장되는 파일명을 설정합니다.
+header( "Content-Disposition: attachment; filename = laptop_imformation_table.xls" );     //filename = 저장되는 파일명을 설정합니다.
 
 header( "Content-Description: PHP4 Generated Data" );
 
@@ -33,28 +33,13 @@ $EXCEL_FILE = "
 <tr>
 
 <th>id</th>
-<th>name</th>
-<th>pro</th>
-<th>phoneNumber</th>
-<th>email</th>
-<th>startdate</th>
-<th>LSA</th>
-<th>tag</th>
-<th>Notes</th>
-<th>DocuSign</th>
-<th>Cpu</th>
-<th>AddtoLed</th>
-<th>Ordered</th>
-<th>Onhand</th>
-<th>LenApp</th>
-<th>TimApp</th>
-<th>PickUpDate</th>
-<th>ShipDate</th>
-<th>TrackingNumber</th>
-<th>Received</th>
-<th>Completed</th>
+<th>SN</th>
+<th>CPU</th>
+<th>inches</th>
 <th>MSOFFICE</th>
-<th>ReturnReceived</th>
+<th>studentId</th>
+<th>ReturnDate</th>
+
 </tr>
 
 ";

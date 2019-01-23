@@ -1,0 +1,4 @@
+"SELECT e.name FROM student AS e INNER JOIN reservation AS u ON e.trackingnumber = u.trackingnumber WHERE name LIKE '%".$name."%' AND studentNumber=$studentNumber AND  Received='Y' and Completed='N' ";
+
+"SELECT e.name FROM student AS e INNER JOIN reservation AS u ON e.trackingnumber = u.trackingnumber WHERE name=LIKE '%".$name."%' AND studentNumber=$studentNumber AND  Received='Y' and Completed='N' ";
+
