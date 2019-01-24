@@ -30,8 +30,7 @@
 
 	<?php
 	session_start();
-	?>
-	<?php
+
 	$username = 'FALL1';
 	$password = 'qqqqqq1!';
 	$hostname = '10.1.10.24';

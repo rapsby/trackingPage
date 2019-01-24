@@ -9,6 +9,7 @@
 	<?php
 	session_start();
 	$id = $_GET["id"];	//laptop
+	echo $id;
 	$studentNumber = $_GET["studentNumber"];
 	$username = 'FALL1';
 	$password = 'qqqqqq1!';
