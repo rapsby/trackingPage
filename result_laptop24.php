@@ -66,7 +66,7 @@
 	while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC) ) {
 		// <tr class='clickable-row' data-href='reservationlaptop.php?id=$row[0]'>
 		echo "
-		<tr class='clickable-row' data-href='returnlaptop.php?id=$row[0]'>
+		<tr class='clickable-row' data-href='returnlaptop.php?id=$row[0]&studentNumber=$studentNumber'>
 		<td>$row[0]</td>
 		<td>$row[1]</td>
 		<td>$row[2]</td>

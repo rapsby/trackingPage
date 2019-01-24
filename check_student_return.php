@@ -13,6 +13,7 @@
 	session_start();
 	$name = $_POST["name"];
 	$studentNumber = $_POST["studentNumber"];
+	$_SESSION["studentNumber"];
 	$username = 'FALL1';
 	$password = 'qqqqqq1!';
 	$hostname = '10.1.10.24';

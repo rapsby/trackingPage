@@ -8,8 +8,8 @@
 
 	<?php
 	session_start();
-	$studentNumber = $_SESSION["studentNumber"];
 	$id = $_GET["id"];	//laptop
+	$studentNumber = $_GET["studentNumber"];
 	$username = 'FALL1';
 	$password = 'qqqqqq1!';
 	$hostname = '10.1.10.24';
@@ -28,9 +28,6 @@
 	// update laptop
 	$sql = "UPDATE laptop SET studentId=null, available='Y' WHERE id = $id";
 	$stmt = sqlsrv_query($conn,$sql);
-
-
-	echo $id;
 
 	// update student
 	$sql = "UPDATE student SET Ordered='N', Onhand='N',  Received = 'N', Completed='Y', ReturnReceived=$date WHERE studentNumber = $studentNumber";
