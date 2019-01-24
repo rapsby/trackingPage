@@ -17,32 +17,6 @@
 	});
 
 </script>
-<style>
-table tr:hover { 
-	background-color: #fadada;
-}
-table{
-	border-collapse: collapse;
-	width: 30%;
-	color: #d96459;
-	font-family: monospace;
-	text-align: left;
-}
-
-table th{
-	background-color: #d96459;
-	color: white;
-	font-size: 11px;
-}
-table td{
-	font-size: 10px;
-}
-table tr
-{
-	text-decoration:none ;
-}
-
-</style>
 </head>
 <body>
 	<?php

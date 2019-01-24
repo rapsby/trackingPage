@@ -27,8 +27,8 @@
 			<li><a href="reservation.php" id="current">Reservation</a></li>
 			<li><a href="return.php">Return</a></li>
 
-			<li><a href="http://www.instagram.com/sungjin1027" target="popup" >Location</a></li>
-			<li><a href="http://www.instagram.com/sungjin1027" target="popup" >Contact</a></li>
+			<!-- <li><a href="http://www.instagram.com/sungjin1027" target="popup" >Location</a></li>
+			<li><a href="http://www.instagram.com/sungjin1027" target="popup" >Contact</a></li> -->
 		</ul>
 	</div>
 

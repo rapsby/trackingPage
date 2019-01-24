@@ -8,8 +8,10 @@
 
 	<?php
 	session_start();
-	$studentNumber = $_SESSION["studentNumber"];
+	
+
 	$id = $_GET["id"];	//laptop
+	$studentNumber = $_GET["studentNumber"];
 	$username = 'FALL1';
 	$password = 'qqqqqq1!';
 	$hostname = '10.1.10.24';
@@ -27,22 +29,22 @@
 	$sql = "SELECT * FROM reservation order BY id DESC";
 	$stmt = sqlsrv_query($conn,$sql);
 	$row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC);
+
 	$rid = $row[0]+1;	//reservation id
 	$trackingNumber = $row[1];	//tracking number
 	$trackingNumber = str_pad($rid,"5","0",STR_PAD_LEFT);
 	$trackingNumber =date("ymd").$trackingNumber;
-	$returndate = date('ymd', strtotime("+30 days"));
 	$date = date("ymd");
 	
+	$sql = "INSERT INTO reservation VALUES ($rid, $trackingNumber, $sid, $id, $date, null)";
+	$stmt = sqlsrv_query($conn,$sql);
 	
 	$sql = "UPDATE laptop SET studentid=$sid, available='N' WHERE id = $id";
 	$stmt = sqlsrv_query($conn,$sql);
 
-	$sql = "UPDATE student SET Ordered='Y', Onhand='Y', PickUpDate=$date, ShipDate=$date, TrackingNumber=$trackingNumber, received='Y', completed='N', ReturnReceived=NULL WHERE id = $sid";
+	$sql = "UPDATE student SET Ordered='Y', Onhand='Y', PickUpDate=$date, ShipDate=$date, trackingNumber=$trackingNumber, received='Y', completed='N', ReturnReceived=NULL WHERE id = $sid";
 	$stmt = sqlsrv_query($conn,$sql);
 
-	$sql = "INSERT INTO reservation VALUES ($rid, '$trackingNumber', $sid, $id, $date, null)";
-	$stmt = sqlsrv_query($conn,$sql);
 
 	$sql = "SELECT * FROM reservation WHERE id = $rid";
 	$stmt = sqlsrv_query($conn,$sql);

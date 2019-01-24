@@ -13,7 +13,6 @@
 				
 				var w = window.open(link, "popupWindow", "width=600, height=400, scrollbars=yes");
 				var $w = $(w.document.body);
-				$w.html("<textarea></textarea>");
 				
 			}
 			else
@@ -32,7 +31,6 @@
 	<?php
 	session_start();
 	?>
-
 	<?php
 	$username = 'FALL1';
 	$password = 'qqqqqq1!';
@@ -59,7 +57,7 @@
 
 	while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC) ) {
 		echo "
-		<tr class='clickable-row' data-href='reservationlaptop.php?id=$row[0]'>
+		<tr class='clickable-row' data-href='reservationlaptop.php?id=$row[0]&studentNumber=$studentNumber'>
 		<td>$row[1]</td>
 		<td>$row[2]</td>
 		<td>$row[3]</td>
@@ -71,6 +69,7 @@
 	echo "</table>";
 
 	?>
+
 
 </body>
 </html>

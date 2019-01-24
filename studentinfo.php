@@ -3,51 +3,10 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="fallstyle.css">
 
-	<style>
-	.phptable tr:hover { 
-		background-color: #fadada;
-	}
-	.phptable{
-		border-collapse: collapse;
-		width: 100%;
-		color: #d96459;
-		font-family: monospace;
-		text-align: left;
-	}
-
-	.phptable th{
-		background-color: #d96459;
-		color: white;
-		font-size: 12px;
-	}
-	.phptable td{
-		font-size: 12px;
-	}
-	.phptable tr
-	{
-		text-decoration:none ;
-	}
-
-</style>
-<!--
-<style>
-
-.phptable{
-	background-color: yellow;
-	border: 1px solid #444444;
-	border-color: green;
-
-}
-</style>
--->
-
 </head>
 <body>
 
 	<?php
-
-
-
 
 	$id = $_GET["id"];
 	$username = 'FALL1';
