@@ -35,15 +35,39 @@
 	$trackingNumber = str_pad($rid,"5","0",STR_PAD_LEFT);
 	$trackingNumber =date("ymd").$trackingNumber;
 	$date = date("ymd");
-	
-	$sql = "INSERT INTO reservation VALUES ($rid, $trackingNumber, $sid, $id, $date, null)";
-	$stmt = sqlsrv_query($conn,$sql);
-	
-	$sql = "UPDATE laptop SET studentid=$sid, available='N' WHERE id = $id";
-	$stmt = sqlsrv_query($conn,$sql);
 
-	$sql = "UPDATE student SET Ordered='Y', Onhand='Y', PickUpDate=$date, ShipDate=$date, trackingNumber=$trackingNumber, received='Y', completed='N', ReturnReceived=NULL WHERE id = $sid";
-	$stmt = sqlsrv_query($conn,$sql);
+	while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC) ) {
+		
+		if($row[0]==$id){
+			$sql = "SELECT id FROM laptop where studentid=$sid";
+			$stmt = sqlsrv_query($conn,$sql);
+			$row2 = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC)
+			$l_id = $row2[0]; 
+
+			$sql = "UPDATE laptop SET studentid=" ", available='Y' WHERE id = $l_id";
+			$stmt = sqlsrv_query($conn,$sql);
+
+			$sql = "UPDATE laptop SET studentid=$sid, available='N' WHERE id = $id";
+			$stmt = sqlsrv_query($conn,$sql);
+
+			$sql = "UPDATE student SET Ordered='Y', Onhand='Y', PickUpDate=$date, ShipDate=$date, trackingNumber=$trackingNumber, received='Y', completed='N', ReturnReceived=NULL WHERE id = $sid";
+			$stmt = sqlsrv_query($conn,$sql);
+
+
+		}
+
+		else{
+			$sql = "INSERT INTO reservation VALUES ($rid, $trackingNumber, $sid, $id, $date, null)";
+			$stmt = sqlsrv_query($conn,$sql);
+			
+			$sql = "UPDATE laptop SET studentid=$sid, available='N' WHERE id = $id";
+			$stmt = sqlsrv_query($conn,$sql);
+
+			$sql = "UPDATE student SET Ordered='Y', Onhand='Y', PickUpDate=$date, ShipDate=$date, trackingNumber=$trackingNumber, received='Y', completed='N', ReturnReceived=NULL WHERE id = $sid";
+			$stmt = sqlsrv_query($conn,$sql);
+		}
+		
+	}
 
 
 	$sql = "SELECT * FROM reservation WHERE id = $rid";
@@ -55,6 +79,7 @@
 	<th>Reservation Date</th>
 	<th>Return Date</th>
 	</tr>";
+
 	while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC) ) {
 		echo "
 		<tr class='clickable-row' data-href='reservationlaptop.php?id=$row[0]'>

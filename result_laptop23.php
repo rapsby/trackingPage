@@ -25,12 +25,11 @@
 
 </script>
 </head>
-<body>
-	
 
+
+<body>
 	<?php
 	session_start();
-
 	$username = 'FALL1';
 	$password = 'qqqqqq1!';
 	$hostname = '10.1.10.24';
@@ -44,6 +43,8 @@
 	
 	<?php
 	$stmt = sqlsrv_query($conn,$sql);
+	$studentNumber = $_GET["id"];
+
 	echo '<table class="phptable" border=1 >';
 	echo "<tr>
 	<th>SN</th>
@@ -66,9 +67,10 @@
 		</tr>";
 	}
 	echo "</table>";
-
+	
 	?>
-
+	<h1></h1>
+	<input type="button" value="return">
 
 </body>
 </html>

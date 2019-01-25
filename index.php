@@ -50,8 +50,7 @@
 </div>
 <div class="menubar">
 	<ul>
-		<li><a href="reservation.php" id="current">Reservation</a></li>
-		<li><a href="return.php">Return</a></li>
+
 		<li><a href="index.php">Student</a></li>
 		<li><a href="laptop.php">Laptop</a></li>
 		<!-- <li><a href="http://www.instagram.com/sungjin1027" target="popup" >Location</a></li>
@@ -82,7 +81,8 @@
 		</div>
 </form>
 
-<iframe name='ifrm' width='100%' height='200px' frameborder='2px'></iframe>
+<iframe name='ifrm' width='100%' height='200px' frameborder='2px' ></iframe>
+
 <!--
 <img src="http://m.hcinews.com/captcha.asp" id="imgCaptcha">
 <div id="container"> <span id="random"><img src="sj.jpg" style="width:500px; height: 500px; visibility: visible; z-index: 8"></span> </div>

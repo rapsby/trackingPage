@@ -7,9 +7,6 @@
 <body>
 
 	<?php
-
-
-
 	$id = $_GET["id"];
 	$username = 'FALL1';
 	$password = 'qqqqqq1!';

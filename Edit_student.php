@@ -7,7 +7,7 @@
 <body>
 
 <?php
-
+	session_start();
 	$id = $_GET["id"];
 	$username = 'FALL1';
 	$password = 'qqqqqq1!';
@@ -51,26 +51,6 @@
 	<tr>
 	<th width="50">Student Startdate</th>
 	<td><input type="text" name="txtStartdate" value="<?php echo $row[6];?>"></td></tr>
-	<!-- <tr>
-	<th width="50">Service Contract</th>
-	<?php
-				
-				// echo (\strpos($row[7], 'Y') !== false) ?
-				// '<td>
-				// <input type="radio" name="txtLSA" checked value="Y">
-				// <label for="txtLSA">Y</label>
-				// <input type="radio" name="txtLSA" value="N">
-				// <label for="txtLSA">N</label>
-				// </td>'
-				// :
-				// '<td>
-				// <input type="radio" name="txtLSA" value="Y">
-				// <label for="txtLSA">Y</label>
-				// <input type="radio" name="txtLSA" checked value="N">
-				// <label for="txtLSA">N</label>
-				// </td>';
-
-				?></tr> -->
 	<tr>
 	<th width="50">Service Tag</th>
 	<td><input type="text" name="txtTag" value="<?php echo $row[8];?>"></td></tr>
@@ -80,6 +60,7 @@
 	<tr>
 	<th width="50">DocuSign</th>
 	<?php
+		
 				
 				echo (\strpos($row[10], 'Y') !== false) ?
 				'<td>
@@ -99,7 +80,12 @@
 				?></tr>
 	<tr>
 	<th width="50">CPU</th>
-	<td><input type="text" name="txtCpu" value="<?php echo $row[11];?>"></td></tr>
+
+	<td><input type="text" name="txtCpu" value="<?php echo $row[11];?>"><button onclick="window.open('result_laptop23.php?id=<?php echo $row[2];?>','window_name','width=430,height=500,location=no,status=no,scrollbars=yes');">button</button>
+	</td>
+
+
+	</tr>
 	<tr>
 	<th width="50">Added to Ledger</th>
 	<td><input type="text" name="txtAddtoLed" value="<?php echo $row[12];?>"></td></tr>

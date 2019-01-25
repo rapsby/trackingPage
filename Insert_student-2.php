@@ -66,6 +66,32 @@
 		);
 	$stmt = sqlsrv_query($conn,$sql,$params);
 
+	$studentNumber = $_POST["txtStudentNumber"];
+
+	$sql = "SELECT id FROM student WHERE studentNumber=$studentNumber";
+	$stmt = sqlsrv_query($conn,$sql);
+	$row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC);
+	$sid = $row[0];
+
+	$sql = "SELECT * FROM reservation order BY id DESC";
+	$stmt = sqlsrv_query($conn,$sql);
+	$row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC);
+
+	$rid = $row[0]+1;	//reservation id
+	$trackingNumber = $row[1];	//tracking number
+	$trackingNumber = str_pad($rid,"5","0",STR_PAD_LEFT);
+	$trackingNumber =date("ymd").$trackingNumber;
+	$date = date("ymd");
+	
+	$sql = "INSERT INTO reservation VALUES ($rid, $trackingNumber, $sid, $id, $date, null)";
+	$stmt = sqlsrv_query($conn,$sql);
+	
+	$sql = "UPDATE laptop SET studentid=$sid, available='N' WHERE id = $id";
+	$stmt = sqlsrv_query($conn,$sql);
+
+	$sql = "UPDATE student SET Ordered='Y', Onhand='Y', PickUpDate=$date, ShipDate=$date, trackingNumber=$trackingNumber, received='Y', completed='N', ReturnReceived=NULL WHERE id = $sid";
+	$stmt = sqlsrv_query($conn,$sql);
+
 	if( $stmt === false ) {
 
 	//die(print("error"))

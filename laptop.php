@@ -2,6 +2,7 @@
 <html>
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 	<script type="text/javascript">
 		var imgObj = null;
 		function moveDiv() {
@@ -25,6 +26,7 @@
 		input.addEventListener("keyup", function(event) {
 			event.preventDefault();
 			if (event.keyCode === 13) {
+				alert("Hello! I am an alert box!!");
 				document.getElementById("searchBtn").click();
 			}
 		});
@@ -45,11 +47,9 @@
 	</div>
 	<div class="menubar">
 		<ul>
-			<li><a href="reservation.php" id="current">Reservation</a></li>
-			<li><a href="return.php">Return</a></li>
+
 			<li><a href="index.php">Student</a></li>
 			<li><a href="laptop.php">Laptop</a></li>
-
 		</ul>
 	</div>
 
@@ -61,14 +61,7 @@
 		}
 
 	</script>
-	<script type="text/javascript">
-		input.addEventListener("keyup", function(event) {
-			event.preventDefault();
-			if (event.keyCode === 13) {
-				document.getElementById("searchBtn").click();
-			}
-		});
-	</script>
+
 
 	<div align = "right"> Laptop data </div>
 	<form method='post' name='frm' style="text-align: right">

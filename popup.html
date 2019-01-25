@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+    // return the value to the parent window
+    function returnYourChoice(choice){
+        opener.setSearchResult(targetField, choice);
+        window.close();
+    }
+</script>
+<form name="thisForm">
+    <table>
+        <tr>
+            <td><span style="color:blue" onclick="returnYourChoice('Bob')">Halo, I am Bob =)</span></td>
+        </tr>
+        <tr>
+            <td><span style="color:blue" onclick="returnYourChoice('Alice')">Hi, I am Alice ^^</span></td>
+        </tr>
+        <tr>
+            <td><span style="color:blue" onclick="returnYourChoice('Kit')">I won't tell u my name.</span></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

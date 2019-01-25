@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+    // open a pop up window
+    function openPopUpWindow(targetField){
+    	var w = window.open('popup.html','_blank','width=400,height=400,scrollbars=1');
+        // pass the targetField to the pop up window
+        w.targetField = targetField;
+        w.focus();
+    }
+    
+    // this function is called by the pop up window
+    function setSearchResult(targetField, returnValue){
+    	targetField.value = returnValue;
+    	window.focus();
+    }
+</script>
+<form name="thisForm">
+	<table>
+		<tr>
+			<td>Put bob here: </td>
+			<td><input type="text" name="textbox1" /></td>
+			<td><a href="#" onclick="openPopUpWindow(document.thisForm.textbox1)">Search</a></td>
+		</tr>
+		<tr>
+			<td>Put Alice here: </td>
+			<td><input type="text" name="textbox2" /></td>
+			<td><a href="#" onclick="openPopUpWindow(document.thisForm.textbox2)">Search</a></td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>
