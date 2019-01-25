@@ -2,6 +2,7 @@
 <html>
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="jquery-3.3.1.min.js"></script>
 	<script type="text/javascript">
 		var imgObj = null;
 		function moveDiv() {
@@ -18,16 +19,19 @@
 		};
 		moveDiv();
 		setInterval(moveDiv, 10);
+		
 	</script>
+<script>
+var input = document.getElementById("name");
+input.addEventListener("keyup", function(event) {
+  event.preventDefault();
+  if (event.keyCode === 13) {
+    document.getElementById("searchBtn").click();
+  }
+});
+</script>
 
-	<script type="text/javascript">
-		input.addEventListener("keyup", function(event) {
-			event.preventDefault();
-			if (event.keyCode === 13) {
-				document.getElementById("searchBtn").click();
-			}
-		});
-	</script>
+
 	<style>
 
 </style>
@@ -38,6 +42,7 @@
 </title>
 </head>
 <body>
+
 	<div class="top" style="position:relative;">
 		<p></p>
 		<p>
@@ -62,7 +67,7 @@
 		function submit_form() {
 			document.frm.target = 'ifrm';
 			document.frm.action = 'result_student.php';
-			document.frm.submit();
+
 
 		}
 
@@ -71,8 +76,12 @@
 
 
 		<form method='post' name='frm' style="text-align: right">
-			<input type=text name=name placeholder="Student name" >
-			<input type=button value='Search' id='searchBtn' onclick='submit_form()'>
+			<input type="text" id="name" name="name" placeholder="Student name" >
+			<button id="searchBtn" onclick="submit_form()">Search</button>
+
+
+
+
 			<br/>
 			<br/>
 			<a href=laptop.php>
@@ -80,6 +89,7 @@
 			</a>
 		</div>
 </form>
+
 
 <iframe name='ifrm' width='100%' height='200px' frameborder='2px' ></iframe>
 

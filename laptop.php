@@ -3,6 +3,8 @@
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="jquery-3.3.1.min.js"></script>
 	<script type="text/javascript">
 		var imgObj = null;
 		function moveDiv() {
@@ -21,21 +23,22 @@
 		moveDiv();
 		setInterval(moveDiv, 10);
 	</script>
-
 	<script type="text/javascript">
+		var input = document.getElementById("cpu");
 		input.addEventListener("keyup", function(event) {
 			event.preventDefault();
 			if (event.keyCode === 13) {
-				alert("Hello! I am an alert box!!");
 				document.getElementById("searchBtn").click();
 			}
 		});
 	</script>
-	<link rel="stylesheet" type="text/css" href="fallstyle.css">
-	
-	<title>
-		LLMS
-	</title>
+</script>
+
+<link rel="stylesheet" type="text/css" href="fallstyle.css">
+
+<title>
+	LLMS
+</title>
 </head>
 <body>
 	<div class="top">
@@ -62,12 +65,11 @@
 
 	</script>
 
-
+	
 	<div align = "right"> Laptop data </div>
 	<form method='post' name='frm' style="text-align: right">
-		<input type=text name=cpu placeholder="CPU">
-
-		<input type=button value='Search' id='searchBtn' onclick='submit_form()'>
+		<input type=text name=cpu id='cpu' placeholder="CPU">
+		<button id="searchBtn" onclick="submit_form()">Search</button>
 		<br/>
 		<br/>
 		<!-- <input type=button value='Student' class="togglebutton" 
@@ -77,7 +79,8 @@
 			</a>
 		</form>
 
-		<iframe name='ifrm' width='100%' height='200px' frameborder='2px'></iframe>
+		<iframe name='ifrm' width='100%' height='200px' frameborder='2px'>
+		</iframe>
 		<!-- <img src="http://m.hcinews.com/captcha.asp" id="imgCaptcha" onclick="showImage();"> -->
 <!--
 	<div id="container"> <span id="random"><img src="sj.jpg" style="width:100%; height: 100%; visibility: visible; z-index: 8"></span>
