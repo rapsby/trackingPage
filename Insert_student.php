@@ -61,7 +61,7 @@
 	<td><input type="text" name="txtEmail"></td></tr>
 	<tr>
 	<th width="120">startdate</th>
-	<td><input type="text" name="txtStartdate"></td></tr>
+	<td><input type="text" name="txtStartdate" ></td></tr>
 	<tr>
 	<th width="120">Lanfall Service Agreement</th>
 	<td><input type="text" name="txtLSA"></td></tr>
