@@ -80,8 +80,6 @@
 				<img src=Laptop_image.png height="55" width="62">
 			</a>
 		</div>
-<!-- <input type=button value='laptop' class="togglebutton" 
-	onclick="location.href='laptop.php'"> -->
 </form>
 
 <iframe name='ifrm' width='100%' height='200px' frameborder='2px'></iframe>

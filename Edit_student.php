@@ -51,26 +51,26 @@
 	<tr>
 	<th width="50">Student Startdate</th>
 	<td><input type="text" name="txtStartdate" value="<?php echo $row[6];?>"></td></tr>
-	<tr>
+	<!-- <tr>
 	<th width="50">Service Contract</th>
 	<?php
 				
-				echo (\strpos($row[7], 'Y') !== false) ?
-				'<td>
-				<input type="radio" name="txtLSA" checked value="Y">
-				<label for="txtLSA">Y</label>
-				<input type="radio" name="txtLSA" value="N">
-				<label for="txtLSA">N</label>
-				</td>'
-				:
-				'<td>
-				<input type="radio" name="txtLSA" value="Y">
-				<label for="txtLSA">Y</label>
-				<input type="radio" name="txtLSA" checked value="N">
-				<label for="txtLSA">N</label>
-				</td>';
+				// echo (\strpos($row[7], 'Y') !== false) ?
+				// '<td>
+				// <input type="radio" name="txtLSA" checked value="Y">
+				// <label for="txtLSA">Y</label>
+				// <input type="radio" name="txtLSA" value="N">
+				// <label for="txtLSA">N</label>
+				// </td>'
+				// :
+				// '<td>
+				// <input type="radio" name="txtLSA" value="Y">
+				// <label for="txtLSA">Y</label>
+				// <input type="radio" name="txtLSA" checked value="N">
+				// <label for="txtLSA">N</label>
+				// </td>';
 
-				?></tr>
+				?></tr> -->
 	<tr>
 	<th width="50">Service Tag</th>
 	<td><input type="text" name="txtTag" value="<?php echo $row[8];?>"></td></tr>
@@ -144,7 +144,7 @@
 
 				?></tr>
 	<tr>
-	<th width="50">LenApp</th>
+	<th width="50">Len Approval</th>
 	<?php
 				
 				echo (\strpos($row[15], 'Y') !== false) ?
@@ -164,7 +164,7 @@
 
 				?></tr>
 	<tr>
-	<th width="50">TimApp</th>
+	<th width="50">Tim Approval</th>
 	<?php
 				
 				echo (\strpos($row[16], 'Y') !== false) ?
@@ -233,7 +233,7 @@
 
 				?></tr>
 	<tr>
-	<th width="50">MSOFFICE</th>
+	<th width="50">MS OFFICE</th>
 	<?php
 				
 				echo (\strpos($row[22], 'Y') !== false) ?

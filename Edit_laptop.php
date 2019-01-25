@@ -30,13 +30,13 @@
 		<table  border="1" class="phptable">
 
 			<tr>
-				<th width="50">id</th>
+				<th width="50">ID</th>
 				<td width="50">
 					<input type="text" name="txtId" value="<?php echo $row[0];?>">
 				</td>
 			</tr>
 			<tr>
-				<th width="50">serial number</th>
+				<th width="50">Serial Number</th>
 				<td><input type="text" name="txtSN" value="<?php echo $row[1];?>"></td>
 			</tr>
 			<tr>
@@ -44,11 +44,11 @@
 				<td><input type="text" name="txtCPU" value="<?php echo $row[2];?>"></td>
 			</tr>
 			<tr>
-				<th width="50">inches</th>
+				<th width="50">Inches</th>
 				<td><input type="text" name="txtInches" value="<?php echo $row[3];?>"></td>
 			</tr>
 			<tr>
-				<th width="50">MSOFFICE</th>
+				<th width="50">MS OFFICE</th>
 				<?php
 				
 				echo (\strpos($row[4], 'Y') !== false) ?
@@ -69,11 +69,11 @@
 				?>
 			</tr>
 			<tr>
-				<th width="50">studentId</th>
+				<th width="50">Student Id</th>
 				<td><input type="text" name="txtStudentId" value="<?php echo $row[5];?>"></td>
 			</tr>
 			<tr>
-				<th width="50">returnDate</th>
+				<th width="50">Return Date</th>
 				<td><input type="text" name="txtreturnDate" value="<?php echo $row[6];?>"></td>
 			</tr>
 			<tr>	

@@ -50,7 +50,7 @@
 	<input type="text" name="txtStudentNumber">
 	</td></tr>
 	<tr>
-	<th width="120">pro</th>
+	<th width="120">program</th>
 	<td width="238">
 	<input type="text" name="txtPro">
 	</td></tr>
@@ -63,35 +63,35 @@
 	<th width="120">startdate</th>
 	<td><input type="text" name="txtStartdate"></td></tr>
 	<tr>
-	<th width="120">LSA</th>
+	<th width="120">Lanfall Service Agreement</th>
 	<td><input type="text" name="txtLSA"></td></tr>
 	<tr>
-	<th width="120">tag</th>
+	<th width="120">Service tag</th>
 	<td><input type="text" name="txtTag"></td></tr>
 	<tr>
 	<th width="120">Notes</th>
 	<td><input type="text" name="txtNotes"></td></tr>
-	<tr>
+	<!-- <tr>
 	<th width="120">DocuSign</th>
-	<td><input type="text" name="txtDocuSign"></td></tr>
+	<td> --><input type="hidden" name="txtDocuSign" value="Y"><!-- </td></tr> -->
 	<tr>
 	<th width="120">CPU</th>
 	<td><input type="text" name="txtCpu"></td></tr>
 	<tr>
-	<th width="120">AddtoLed</th>
+	<th width="120">Added to Ledger</th>
 	<td><input type="text" name="txtAddtoLed"></td></tr>
-	<tr>
+	<!-- <tr>
 	<th width="120">Ordered</th>
-	<td><input type="text" name="txtOrdered"></td></tr>
-	<tr>
+	<td> --><input type="hidden" name="txtOrdered" value="Y"><!-- </td></tr> -->
+	<!-- <tr>
 	<th width="120">Onhand</th>
-	<td><input type="text" name="txtOnhand"></td></tr>
-	<tr>
+	<td> --><input type="hidden" name="txtOnhand" value="Y"><!-- </td></tr> -->
+	<!-- <tr>
 	<th width="120">LenApp</th>
-	<td><input type="text" name="txtLenApp"></td></tr>
-	<tr>
+	<td> --><input type="hidden" name="txtLenApp" value="Y"><!-- </td></tr>
+ -->	<!-- <tr>
 	<th width="120">TimApp</th>
-	<td><input type="text" name="txtTimApp"></td></tr>
+	<td> --><input type="hidden" name="txtTimApp" value="Y"><!-- </td></tr> -->
 	<tr>
 	<th width="120">PickUpDate</th>
 	<td><input type="text" name="txtPickUpDate"></td></tr>
@@ -101,15 +101,17 @@
 	<tr>
 	<th width="120">TrackingNumber</th>
 	<td><input type="text" name="txtTrackingNumber"></td></tr>
-	<tr>
-	<th width="120">Received</th>
-	<td><input type="text" name="txtReceived"></td></tr>
-	<tr>
-	<th width="120">Completed</th>
-	<td><input type="text" name="txtCompleted"></td></tr>
-	<tr>
+	<!-- <tr> -->
+	<!-- <th width="120">Received</th> -->
+	<!-- <td> -->
+	<input type="hidden" name="txtReceived" value="N"><!-- </td> --><!-- </tr> -->
+	<!-- <tr> -->
+	<!-- <th width="120">Completed</th> -->
+	<!-- <td> -->
+	<input type="hidden" name="txtCompleted" value="Y"><!-- </td> --><!-- </tr> -->
+	<!-- <tr>
 	<th width="120">MSOFFICE</th>
-	<td><input type="text" name="txtMSOFFICE"></td></tr>
+	<td> --><input type="hidden" name="txtMSOFFICE" value="Y"><!-- </td></tr> -->
 	<tr>
 	<th width="120">ReturnReceived</th>
 	<td><input type="text" name="txtReturnReceived"></td></tr>
