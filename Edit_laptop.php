@@ -36,7 +36,7 @@
 				</td>
 			</tr>
 			<tr>
-				<th width="50">SN</th>
+				<th width="50">serial number</th>
 				<td><input type="text" name="txtSN" value="<?php echo $row[1];?>"></td>
 			</tr>
 			<tr>

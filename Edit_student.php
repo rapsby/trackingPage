@@ -29,30 +29,30 @@
 	<form action="Save_student.php" name="frmAdd" method="post">
 	<table  border="1" class="phptable">
 	<tr>
-	<th width="50">id</th>
+	<th width="50">ID</th>
 	<td width="50">
 	<input type="text" name="txtId" value="<?php echo $row[0];?>">
 	</td></tr>
 	<tr>
-	<th width="50">name</th>
+	<th width="50">Name</th>
 	<td><input type="text" name="txtName" value="<?php echo $row[1];?>"></td></tr>
 	<tr>
-	<th width="50">studentNumber</th>
+	<th width="50">Student Number</th>
 	<td><input type="text" name="txtStudentNumber" value="<?php echo $row[2];?>"></td></tr>
 	<tr>
-	<th width="50">pro</th>
+	<th width="50">Student Program</th>
 	<td><input type="text" name="txtPro" value="<?php echo $row[3];?>"></td></tr>
 	<tr>
-	<th width="50">phoneNumber</th>
+	<th width="50">Phone Number</th>
 	<td><input type="text" name="txtPhoneNumber" value="<?php echo $row[4];?>"></td></tr>
 	<tr>
-	<th width="50">email</th>
+	<th width="50">Email</th>
 	<td><input type="text" name="txtEmail" value="<?php echo $row[5];?>"></td></tr>
 	<tr>
-	<th width="50">startdate</th>
+	<th width="50">Student Startdate</th>
 	<td><input type="text" name="txtStartdate" value="<?php echo $row[6];?>"></td></tr>
 	<tr>
-	<th width="50">LSA</th>
+	<th width="50">Service Contract</th>
 	<?php
 				
 				echo (\strpos($row[7], 'Y') !== false) ?
@@ -72,7 +72,7 @@
 
 				?></tr>
 	<tr>
-	<th width="50">tag</th>
+	<th width="50">Service Tag</th>
 	<td><input type="text" name="txtTag" value="<?php echo $row[8];?>"></td></tr>
 	<tr>
 	<th width="50">Notes</th>
@@ -98,10 +98,10 @@
 
 				?></tr>
 	<tr>
-	<th width="50">Cpu</th>
+	<th width="50">CPU</th>
 	<td><input type="text" name="txtCpu" value="<?php echo $row[11];?>"></td></tr>
 	<tr>
-	<th width="50">AddtoLed</th>
+	<th width="50">Added to Ledger</th>
 	<td><input type="text" name="txtAddtoLed" value="<?php echo $row[12];?>"></td></tr>
 	<tr>
 	<th width="50">Ordered</th>
@@ -184,13 +184,13 @@
 
 				?></tr>
 	<tr>
-	<th width="50">PickUpDate</th>
+	<th width="50">Pick Up Date</th>
 	<td><input type="text" name="txtPickUpDate" value="<?php echo $row[17];?>"></td></tr>
 	<tr>
-	<th width="50">ShipDate</th>
+	<th width="50">Ship Date</th>
 	<td><input type="text" name="txtShipDate" value="<?php echo $row[18];?>"></td></tr>
 	<tr>
-	<th width="50">TrackingNumber</th>
+	<th width="50">Tracking Number</th>
 	<td><input type="text" name="txtTrackingNumber" value="<?php echo $row[19];?>"></td></tr>
 	<tr>
 	<th width="50">Received</th>
@@ -253,7 +253,7 @@
 
 				?></tr>
 	<tr>
-	<th width="50">ReturnReceived</th>
+	<th width="50">Return Received</th>
 	<td><input type="text" name="txtReturnReceived" value="<?php echo $row[23];?>"></td></tr>
 	
 	</form>

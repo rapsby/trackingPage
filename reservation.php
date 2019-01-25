@@ -22,17 +22,22 @@
 			Laurus Laptop Management Service</a>
 		</p>
 	</div>
+	
+	
+	
 	<div class="menubar">
 		<ul>
 			<li><a href="reservation.php" id="current">Reservation</a></li>
 			<li><a href="return.php">Return</a></li>
-
+			<li><a href="index.php">Student</a></li>
+			<li><a href="laptop.php">Laptop</a></li>
 			<!-- <li><a href="http://www.instagram.com/sungjin1027" target="popup" >Location</a></li>
 			<li><a href="http://www.instagram.com/sungjin1027" target="popup" >Contact</a></li> -->
 		</ul>
 	</div>
 
-
+	
+	
 
 
 	<div style = "padding:20px">
@@ -52,6 +57,8 @@
 	</div>
 
 
+	
+	
 
 	<?php
 	$username = 'FALL1';

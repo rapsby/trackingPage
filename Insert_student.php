@@ -30,54 +30,10 @@
 
 	$connectionInfo = array( "Database"=>$dbName, "UID" => $username, "PWD" => $password);
 	$conn = sqlsrv_connect( $hostname, $connectionInfo);
-
-	
-//$sql = "SELECT * FROM student";
-//$sql = "SELECT * FROM student WHERE name LIKE 'John' ";
-
-	//$sql = "insert into student(No_,FirstName) values(?, ?)";
-
-	// $params = array($_POST["txtName"]
-	// 	,$_POST["txtPro"],
-	// 	$_POST["txtPhoneNumber"],
-	// 	$_POST["txtEmail"],
-	// 	$_POST["txtStartdate"],
-	// 	$_POST["txtLSA"],
-	// 	$_POST["txtTag"],
-	// 	$_POST["txtNotes"],
-	// 	$_POST["txtDocuSign"],
-	// 	$_POST["txtCpu"],
-	// 	$_POST["txtAddtoLed"],
-	// 	$_POST["txtOrdered"],
-	// 	$_POST["txtOnhand"],
-	// 	$_POST["txtLenApp"],
-	// 	$_POST["txtTimApp"],
-	// 	$_POST["txtPickUpDate"],
-	// 	$_POST["txtShipDate"],
-	// 	$_POST["txtTrackingNumber"],
-	// 	$_POST["Received"],
-	// 	$_POST["txtCompleted"],
-	// 	$_POST["txtMSOFFICE"],
-	// 	$_POST["txtReturnReceived"],
-	// 	$_POST["txtId"]
-	// 	);
-	// $stmt = sqlsrv_query($conn,$sql,$params);
-
-	// if( $stmt === false ) {
-
-	// die( print_r( sqlsrv_errors(), true));
-
-	// }
-
-	// else
-	// {
-	// echo "Record update successfully";
-
-	// }
 	?>
 	<form action="Insert_student-2.php" name="frmAdd" method="post">
 
-	<table width="284" border="1">
+	<table width="284" border="1" class="phptable">
 	<tr>
 	<th width="120">id</th>
 	<td width="238">

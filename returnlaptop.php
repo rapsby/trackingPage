@@ -27,7 +27,7 @@
 	$stmt = sqlsrv_query($conn,$sql);
 
 	// update laptop
-	$sql = "UPDATE laptop SET studentId=null, available='Y' WHERE id = $id";
+	$sql = "UPDATE laptop SET studentId=null, available='Y', returnDate=$date WHERE id = $id";
 	$stmt = sqlsrv_query($conn,$sql);
 
 	// update student
