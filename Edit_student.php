@@ -81,7 +81,8 @@
 	<tr>
 	<th width="50">CPU</th>
 
-	<td><input type="text" name="txtCpu" value="<?php echo $row[11];?>"><button onclick="window.open('result_laptop23.php?id=<?php echo $row[2];?>','window_name','width=430,height=500,location=no,status=no,scrollbars=yes');">button</button>
+	<td><input type="text" name="txtCpu" value="<?php echo $row[11];?>">
+		<input type="button" onclick="window.open('result_laptop23.php?id=<?php echo $row[2];?>','window_name','width=430,height=500,location=no,status=no,scrollbars=yes');" value='button'>
 	</td>
 
 

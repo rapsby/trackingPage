@@ -24,64 +24,35 @@
 	$sql = "SELECT id FROM student WHERE studentNumber=$studentNumber";
 	$stmt = sqlsrv_query($conn,$sql);
 	$row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC);
-	$sid = $studentNumber;
+	$sid = $row[0];
 
 	$sql = "SELECT * FROM reservation order BY id DESC";
 	$stmt = sqlsrv_query($conn,$sql);
 	$row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC);
 
-	$rid = $row[0]+1;	//reservation id
+	$rid = $row[0]+1;	//next reservation id
 	$trackingNumber = $row[1];	//tracking number
 	$trackingNumber = str_pad($rid,"5","0",STR_PAD_LEFT);
 	$trackingNumber =date("ymd").$trackingNumber;
 	$date = date("ymd");
- 
 
-	while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC) ) {
-		 
- 
-		if($row[0]==$id){
+	$sql = "INSERT INTO reservation VALUES ($rid, $trackingNumber, $sid, $id, $date, null)";
+	$stmt = sqlsrv_query($conn,$sql);
 
-			echo $row[0];
-			echo $row[0];
-			echo $row[0];
-			echo $row[0];
-			$sql = "SELECT id FROM laptop where studentid=$sid";
-			$stmt = sqlsrv_query($conn,$sql);
-			$row2 = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC);
-			$l_id = $row2[0]; 
+	$sql = "UPDATE laptop SET studentid=$sid, available='N' WHERE id = $id";
+	$stmt = sqlsrv_query($conn,$sql);
 
-	
-			$sql = "UPDATE laptop SET studentid='$id', available='Y' WHERE id = $l_id";
-			// $sql = "UPDATE laptop SET studentid=" ", available='Y' WHERE id = $l_id";
-			$stmt = sqlsrv_query($conn,$sql);
-
-			$sql = "UPDATE laptop SET studentid=$sid, available='N' WHERE id = $id";
-			$stmt = sqlsrv_query($conn,$sql);
-
-			$sql = "UPDATE reservation SET id=$rid, trackingNumber=$trackingNumber, studentId = $sid, laptopId=$id, pickupDate= $date, returnDate = null WHERE id = $id";
-			$stmt = sqlsrv_query($conn,$sql);
-
-			$sql = "UPDATE student SET Ordered='Y', Onhand='Y', PickUpDate=$date, ShipDate=$date, trackingNumber=$trackingNumber, received='Y', completed='N', ReturnReceived=NULL WHERE id = $sid";
-			$stmt = sqlsrv_query($conn,$sql);
-
-
-		}
-
-		else{
-
-			$sql = "INSERT INTO reservation VALUES ($rid, $trackingNumber, $sid, $id, $date, null)";
-			$stmt = sqlsrv_query($conn,$sql);
-			
-			$sql = "UPDATE laptop SET studentid=$sid, available='N' WHERE id = $id";
-			$stmt = sqlsrv_query($conn,$sql);
-
-			$sql = "UPDATE student SET Ordered='Y', Onhand='Y', PickUpDate=$date, ShipDate=$date, trackingNumber=$trackingNumber, received='Y', completed='N', ReturnReceived=NULL WHERE id = $sid";
-			$stmt = sqlsrv_query($conn,$sql);
-		}
-		
+	$sql = "SELECT CPU, inches FROM laptop WHERE id = $id";
+	$stmt = sqlsrv_query($conn,$sql);
+	while( $row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_NUMERIC) ) {
+		$cpu = $row[0];
+		$inches = $row[1];
 	}
+	$spec = $cpu.' - '.$inches;
 
+
+	$sql = "UPDATE student SET Cpu='$spec', Ordered='Y', Onhand='Y', PickUpDate=$date, ShipDate=$date, TrackingNumber=$trackingNumber, Received='Y', Completed='N', ReturnReceived=NULL WHERE id = $sid";
+	$stmt = sqlsrv_query($conn,$sql);
 
 	$sql = "SELECT * FROM reservation WHERE id = $rid";
 	$stmt = sqlsrv_query($conn,$sql);
