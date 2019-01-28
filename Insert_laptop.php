@@ -42,13 +42,22 @@
   <option value="i3">i3</option>
   <option value="i5">i5</option>
   <option value="i7">i7</option>
-  <option value="성욱씨의비밀병기">Audi</option>
+  <option value="i9">i9</option>
 </select>
 
 	</td></tr>
 	<tr>
 	<th width="120">Inches</th>
-	<td><input type="text" name="txtInches"></td></tr>
+	<td width="238">
+
+	<select name="txtInches">
+  <option value="13">13</option>
+  <option value="15">15</option>
+  <option value="17">17</option>
+  <option value="19">19</option>
+</select>
+
+	</td></tr>
 	<th width="120">MSOFFICE</th>
 	<td><input type="text" name="txtMSOFFICE" value='Y'></td></tr>
 	<tr>

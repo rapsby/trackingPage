@@ -76,7 +76,6 @@
 	
 	
 	<h1></h1>
-	<input type="button" value="return">
 
 	
 </body>
