@@ -99,7 +99,11 @@
 
 
 	?>
+	<script type="text/javascript">
+		self.close();
 
+
+	</script>
 	<input type="button" name="Closeseseses" value="Close" onclick="javascript:window.close();">
 
 

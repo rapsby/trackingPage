@@ -53,7 +53,9 @@
 	<td><input type="text" name="txtStartdate" value="<?php echo $row[6];?>"></td></tr>
 	<tr>
 	<th width="50">Service Tag</th>
-	<td><input type="text" name="txtTag" value="<?php echo $row[8];?>"></td></tr>
+	<td><input type="text" name="txtTag" value="<?php echo $row[8];?>">
+		<input type="button" onclick="window.open('result_laptop23.php?id=<?php echo $row[2];?>','window_name','width=400,height=500,location=no,status=no,scrollbars=yes');" value='Assign'>
+	</td></tr>
 	<tr>
 	<th width="50">Notes</th>
 	<td><input type="text" name="txtNotes" value="<?php echo $row[9];?>"></td></tr>
@@ -82,7 +84,7 @@
 	<th width="50">CPU</th>
 
 	<td><input type="text" name="txtCpu" value="<?php echo $row[11];?>">
-		<input type="button" onclick="window.open('result_laptop23.php?id=<?php echo $row[2];?>','window_name','width=430,height=500,location=no,status=no,scrollbars=yes');" value='button'>
+		
 	</td>
 
 

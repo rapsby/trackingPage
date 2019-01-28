@@ -16,11 +16,11 @@
 	jQuery(document).ready(function($) {
 		$(".clickable-row").click(function() {
 			var link =  $(this).data("href");
-			var w = window.open(link, "popupWindow", "width=600, height=400, scrollbars=yes");
+			var w = window.open(link, "popupWindow", "width=800, height=600, scrollbars=yes");
 			var $w = $(w.document.body);
 			$w.html("<textarea></textarea>");
 		});
-	});
+	}); 
 
 	function submit_form() {
 		document.frm.target = 'ifrm';
