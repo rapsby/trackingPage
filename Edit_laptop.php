@@ -55,7 +55,14 @@
 			</tr>
 			<tr>
 				<th width="50">Inches</th>
-				<td><input type="text" name="txtInches" value="<?php echo $row[3];?>"></td>
+				<td>
+					<select name="txtInches">
+						<option hidden value="default"><?php echo $row[3];?></option>
+						<option value="13">13</option>
+						<option value="15">15</option>
+						<option value="17">17</option>
+						<option value="19">19</option>
+					</select></td>
 			</tr>
 			<tr>
 				<th width="50">MS OFFICE</th>
