@@ -26,6 +26,26 @@
 	$row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC);
 	$sid = $row[0];
 
+
+	$date = date("ymd");
+	/* return
+	1. search trackingNumber in student
+	2. search laptop id in reservation table using trackingnNumber
+	3. update laptop set available = 'Y', student id = null
+	*/
+	$sql = "Select trackingNumber from student where Id=$sid";
+	$stmt = sqlsrv_query($conn,$sql);
+	$row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_NUMERIC);
+	$trackingNumber = $row[0];
+
+	$sql = "SELECT laptopId from reservation where trackingNumber=$trackingNumber";
+	$stmt = sqlsrv_query($conn,$sql);
+	$row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_NUMERIC);
+	$laptopId = $row[0];
+
+	$sql = "UPDATE laptop set studentid=null, available='Y', returnDate=$date where id=$laptopId";
+	$stmt = sqlsrv_query($conn,$sql);
+
 	$sql = "SELECT * FROM reservation order BY id DESC";
 	$stmt = sqlsrv_query($conn,$sql);
 	$row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC);
@@ -34,7 +54,10 @@
 	$trackingNumber = $row[1];	//tracking number
 	$trackingNumber = str_pad($rid,"5","0",STR_PAD_LEFT);
 	$trackingNumber =date("ymd").$trackingNumber;
-	$date = date("ymd");
+	
+
+
+
 
 	$sql = "INSERT INTO reservation VALUES ($rid, $trackingNumber, $sid, $id, $date, null)";
 	$stmt = sqlsrv_query($conn,$sql);

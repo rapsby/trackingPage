@@ -30,14 +30,22 @@
 
 	$connectionInfo = array( "Database"=>$dbName, "UID" => $username, "PWD" => $password);
 	$conn = sqlsrv_connect( $hostname, $connectionInfo);
+
+	$sql = "SELECT id FROM student order by id desc";
+	$stmt = sqlsrv_query($conn,$sql);
+	$row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_NUMERIC);
+	$id = $row[0]+1;
+
 	?>
+
+
 	<form action="Insert_student-2.php" name="frmAdd" method="post">
 
 	<table width="284" border="1" class="phptable">
 	<tr>
 	<th width="120">id</th>
 	<td width="238">
-	<input type="text" name="txtId">
+	<input type="text" name="txtId" value=<?php echo $id?>>
 	</td></tr>
 	<tr>
 	<th width="120">name</th>
