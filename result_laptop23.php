@@ -67,7 +67,7 @@
 		</tr>";
 	}
 	echo "</table>";
-	
+	echo("<script>self.close()</script>");
 	?>
 	<h1></h1>
 	<input type="button" value="return">
