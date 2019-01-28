@@ -53,7 +53,7 @@
 
 			<li><a href="index.php">Student</a></li>
 			<li><a href="laptop.php">Laptop</a></li>
-			<li><a href="return.php">Return</a></li>
+			<!-- <li><a href="return.php">Return</a></li> -->
 		</ul>
 	</div>
 

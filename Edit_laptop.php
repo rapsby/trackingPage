@@ -41,7 +41,17 @@
 			</tr>
 			<tr>
 				<th width="50">CPU</th>
-				<td><input type="text" name="txtCPU" value="<?php echo $row[2];?>"></td>
+				<td>
+
+					<select name="txtCPU">
+						<option hidden value="default"><?php echo $row[2];?></option>
+						<option value="i3">i3</option>
+						<option value="i5">i5</option>
+						<option value="i7">i7</option>
+						<option value="i9">i9</option>
+					</select>
+					
+				</td>
 			</tr>
 			<tr>
 				<th width="50">Inches</th>
