@@ -65,12 +65,17 @@
 		<td>$row[6]</td>
 		<td>$row[7]</td>
 		</tr>";
+		
 	}
+	
 	echo "</table>";
-	echo("<script>self.close()</script>");
 	?>
 	<h1></h1>
 	<input type="button" value="return">
 
+	<script type='text/javascript'>
+     settimeout(self.close(),5000);
+</script>
+	
 </body>
 </html>
