@@ -34,7 +34,7 @@
 	$sql = "SELECT id FROM student order by id desc";
 	$stmt = sqlsrv_query($conn,$sql);
 	$row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_NUMERIC);
-	$id = $row[0]+1;
+	$id = $row[0]+1; 
 
 	?>
 
