@@ -44,7 +44,7 @@
 				<td>
 
 					<select name="txtCPU">
-						<option hidden value="default"><?php echo $row[2];?></option>
+						<option hidden value=<?php echo $row[2];?>><?php echo $row[2];?></option>
 						<option value="i3">i3</option>
 						<option value="i5">i5</option>
 						<option value="i7">i7</option>
@@ -57,7 +57,7 @@
 				<th width="50">Inches</th>
 				<td>
 					<select name="txtInches">
-						<option hidden value="default"><?php echo $row[3];?></option>
+						<option hidden value=<?php echo $row[3];?>><?php echo $row[3];?></option>
 						<option value="13">13</option>
 						<option value="15">15</option>
 						<option value="17">17</option>

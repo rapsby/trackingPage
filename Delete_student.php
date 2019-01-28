@@ -31,14 +31,30 @@
 	$connectionInfo = array( "Database"=>$dbName, "UID" => $username, "PWD" => $password);
 	$conn = sqlsrv_connect( $hostname, $connectionInfo);
 
-	
+	$date = date("ymd");
+
 	for($i=0;$i<count($_POST["chkDel"]);$i++)
 	{
 		if($_POST["chkDel"][$i] != ""){
 			
+			$id_check = $_POST["chkDel"][$i];
+
+			$sql = "SELECT laptopId from reservation where studentId=$id_check";
+			$stmt = sqlsrv_query($conn,$sql);
+			$row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_NUMERIC);
+			$laptopId = $row[0];
+
+			$sql = "UPDATE laptop set studentid=null, available='Y', returnDate=$date where id=$laptopId";
+			$stmt = sqlsrv_query($conn,$sql);
+
+			$sql = "DELETE FROM reservation WHERE studentId=$id_check";
+			$stmt = sqlsrv_query($conn,$sql);
+
 			$strSQL = "DELETE FROM student WHERE id = ?";
 			$params = array($_POST["chkDel"][$i]);
-			$stmt = sqlsrv_query($conn,$strSQL,$params);	
+			$stmt = sqlsrv_query($conn,$strSQL,$params);
+
+
 				
 		}
 

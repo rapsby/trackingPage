@@ -37,7 +37,7 @@
 	$connectionInfo = array( "Database"=>$dbName, "UID" => $username, "PWD" => $password);
 	$conn = sqlsrv_connect( $hostname, $connectionInfo);
 	
-	$sql = "SELECT * FROM laptop WHERE cpu LIKE '%".$cpu."%' ORDER BY returndate, inches";
+	$sql = "SELECT * FROM laptop WHERE cpu LIKE '%".$cpu."%' ORDER BY id";
 	
 
 	$_SESSION['sql'] = $sql;
