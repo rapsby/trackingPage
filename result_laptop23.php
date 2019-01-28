@@ -13,6 +13,7 @@
 				
 				var w = window.open(link, "popupWindow", "width=600, height=400, scrollbars=yes");
 				var $w = $(w.document.body);
+				self.close();
 				
 			}
 			else
@@ -24,6 +25,7 @@
 	});
 
 </script>
+
 </head>
 
 
@@ -70,12 +72,12 @@
 	
 	echo "</table>";
 	?>
+	
+	
+	
 	<h1></h1>
 	<input type="button" value="return">
 
-	<script type='text/javascript'>
-     settimeout(self.close(),5000);
-</script>
 	
 </body>
 </html>

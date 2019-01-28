@@ -38,7 +38,13 @@
 	<tr>
 	<th width="120">CPU</th>
 	<td width="238">
-	<input type="text" name="txtCPU">
+	<select name="txtCPU">
+  <option value="i3">i3</option>
+  <option value="i5">i5</option>
+  <option value="i7">i7</option>
+  <option value="성욱씨의비밀병기">Audi</option>
+</select>
+
 	</td></tr>
 	<tr>
 	<th width="120">Inches</th>
