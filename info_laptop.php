@@ -35,7 +35,7 @@ session_start();
 	<th>Inches</th>
 	<th>MSOFFICE</th>
 	<th>StudentId</th>
-	<th>returnDate</th>
+	<th>Recevied Date</th>
 	<th>Available</th>
 	</tr>";
 

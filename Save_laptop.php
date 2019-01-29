@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,7 +36,7 @@
 		$_POST["txtInches"],
 		$_POST["txtMSOFFICE"],
 		$_POST["txtStudentId"],
-		$_POST["txtreturnDate"],
+		$_POST["txtReturnDate"],
 		$_POST["txtAvailable"],
 		$_POST["txtId"]
 	);
@@ -41,18 +44,17 @@
 	$stmt = sqlsrv_query($conn,$sql,$params);
 
 	if( $stmt === false ) {
-
 		die( print_r( sqlsrv_errors(), true));
-
 	}
 
 	else
 	{
 		echo "Record update successfully<br/>";
 		
-
 	}
 	?>
+	
+
 <input type="button" name="Closeseseses" value="Close" onclick="javascript:window.close();">
 </body>
 </html>

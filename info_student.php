@@ -56,7 +56,7 @@
 	<td><input type="text" name="txtEmail" value="<?php echo $row[5];?>"></td></tr>
 	<tr>
 	<th width="50">Student Startdate</th>
-	<td><input type="text" name="txtStartdate" value="<?php echo $row[6];?>"></td></tr>
+	<td><input type="date" name="txtStartdate" value="<?php echo $row[6];?>"></td></tr>
 	<tr>
 	<th width="50">Service Tag</th>
 	<td><input type="text" name="txtTag" value="<?php echo $row[8];?>">

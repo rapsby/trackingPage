@@ -20,7 +20,8 @@
 	$connectionInfo = array( "Database"=>$dbName, "UID" => $username, "PWD" => $password);
 	$conn = sqlsrv_connect( $hostname, $connectionInfo);
 
-	$date = date("ymd");
+	$date = date("mdy");
+	$date = str_pad($date,"6","0",STR_PAD_LEFT);
 
 	// update reservation
 	$sql = "UPDATE reservation SET returnDate=$date WHERE laptopid = $id";

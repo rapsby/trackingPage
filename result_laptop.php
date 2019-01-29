@@ -70,7 +70,7 @@
 	<th>Inches</th>
 	<th>MSOFFICE</th>
 	<th>StudentId</th>
-	<th>returnDate</th>
+	<th>Received Date</th>
 	<th>Available</th>
 	</tr>";
 
