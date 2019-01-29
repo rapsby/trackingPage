@@ -39,27 +39,35 @@
 			
 			$id_check = $_POST["chkDel"][$i];
 
+
 			$sql = "SELECT laptopId from reservation where studentId=$id_check";
 			$stmt = sqlsrv_query($conn,$sql);
-			$row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_NUMERIC);
-			$laptopId = $row[0];
+			// $row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_NUMERIC);
+			// $laptopId = $row[0];
 
-			$sql = "UPDATE laptop set studentid=null, available='Y', returnDate=$date where id=$laptopId";
-			$stmt = sqlsrv_query($conn,$sql);
-
-			$sql = "DELETE FROM reservation WHERE studentId=$id_check";
-			$stmt = sqlsrv_query($conn,$sql);
-
-			$strSQL = "DELETE FROM student WHERE id = ?";
-			$params = array($_POST["chkDel"][$i]);
-			$stmt = sqlsrv_query($conn,$strSQL,$params);
-
-
+			while( $row2 = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC) ) {
 				
+				$laptopId = $row2[0];
+				
+				echo $laptopId;
+
+				$sql = "UPDATE laptop set studentId=null, available='Y', returnDate=$date where id=$laptopId";
+				$stmt = sqlsrv_query($conn,$sql);
+			}
+
+			// $sql = "UPDATE laptop set studentid=null, available='Y', returnDate=$date where id=$laptopId";
+			// $stmt = sqlsrv_query($conn,$sql);
+
+
+			// $sql = "DELETE FROM reservation WHERE studentId=$id_check";
+			// $stmt = sqlsrv_query($conn,$sql);
+
+
+			// $strSQL = "DELETE FROM student WHERE id = ?";
+			// $params = array($_POST["chkDel"][$i]);
+			// $stmt = sqlsrv_query($conn,$strSQL,$params);		
 		}
-
 	}
-
 	?>
 </body>
 </html>

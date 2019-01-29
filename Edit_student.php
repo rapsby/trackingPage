@@ -91,7 +91,24 @@
 	</tr>
 	<tr>
 	<th width="50">Added to Ledger</th>
-	<td><input type="text" name="txtAddtoLed" value="<?php echo $row[12];?>"></td></tr>
+		<?php
+				
+				echo (\strpos($row[12], 'Y') !== false) ?
+				'<td>
+				<input type="radio" name="txtAddtoLed" checked value="Y">
+				<label for="txtAddtoLed">Y</label>
+				<input type="radio" name="txtAddtoLed" value="N">
+				<label for="txtAddtoLed">N</label>
+				</td>'
+				:
+				'<td>
+				<input type="radio" name="txtAddtoLed" value="Y">
+				<label for="txtAddtoLed">Y</label>
+				<input type="radio" name="txtAddtoLed" checked value="N">
+				<label for="txtAddtoLed">N</label>
+				</td>';
+
+				?></tr>
 	<tr>
 	<th width="50">Ordered</th>
 	<?php
