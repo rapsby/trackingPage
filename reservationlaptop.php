@@ -65,16 +65,18 @@
 	$sql = "UPDATE laptop SET studentid=$sid, available='N' WHERE id = $id";
 	$stmt = sqlsrv_query($conn,$sql);
 
-	$sql = "SELECT CPU, inches FROM laptop WHERE id = $id";
+	$sql = "SELECT CPU, inches, SN FROM laptop WHERE id = $id";
 	$stmt = sqlsrv_query($conn,$sql);
+	$sn;
 	while( $row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_NUMERIC) ) {
 		$cpu = $row[0];
 		$inches = $row[1];
+		$sn = $row[2];
 	}
 	$spec = $cpu.' - '.$inches;
 
 
-	$sql = "UPDATE student SET Cpu='$spec', Ordered='Y', Onhand='Y', PickUpDate=$date, ShipDate=$date, TrackingNumber=$trackingNumber, Received='Y', Completed='N', ReturnReceived=NULL WHERE id = $sid";
+	$sql = "UPDATE student SET Cpu='$spec', Ordered='Y', Onhand='Y', PickUpDate=$date, ShipDate=$date, TrackingNumber=$trackingNumber, Received='Y', Completed='N', ReturnReceived=NULL, tag='$sn' WHERE id = $sid";
 	$stmt = sqlsrv_query($conn,$sql);
 
 	$sql = "SELECT * FROM reservation WHERE id = $rid";
@@ -97,14 +99,11 @@
 	}
 	echo "</table>";
 
-
 	?>
 	<script type="text/javascript">
 		self.close();
 
-
 	</script>
-	<input type="button" name="Closeseseses" value="Close" onclick="javascript:window.close();">
 
 
 
