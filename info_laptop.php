@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,12 +50,12 @@
 		<td>$row[6]</td>
 		<td>$row[7]</td>
 		</tr>";
-	
+		
 
-	echo "</table>";
+		echo "</table>";
 
-	
-}
+		
+	}
 	include "Edit_laptop.php";
 	
 	?>

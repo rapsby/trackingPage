@@ -23,7 +23,7 @@
 	$connectionInfo = array( "Database"=>$dbName, "UID" => $username, "PWD" => $password);
 	$conn = sqlsrv_connect( $hostname, $connectionInfo);
 
-	
+
 
 	$sql ="SELECT * FROM student WHERE id = '".$_GET["sid"]."' ";
 	$stmt = sqlsrv_query($conn,$sql);
@@ -62,6 +62,11 @@
 	<td><input type="text" name="txtTag" value="<?php echo $row[8];?>">
 		<button type="button" onclick="window.open('result_laptop23.php?studentNumber=<?php echo $row[2];?>','window_name','width=400,height=500,location=no,status=no,scrollbars=yes');">Assign</button>
 	</td></tr>
+		<tr>
+	<th width="50">CPU</th>
+	<td><input type="text" name="txtCpu" value="<?php echo $row[11];?>">
+	</td>
+	</tr>
 	<tr>
 	<th width="50">Notes</th>
 	<td><input type="text" name="txtNotes" value="<?php echo $row[9];?>"></td></tr>
@@ -86,15 +91,7 @@
 				</td>';
 
 				?></tr>
-	<tr>
-	<th width="50">CPU</th>
 
-	<td><input type="text" name="txtCpu" value="<?php echo $row[11];?>">
-		
-	</td>
-
-
-	</tr>
 	<tr>
 	<th width="50">Added to Ledger</th>
 		<?php
@@ -198,12 +195,12 @@
 	<tr>
 	<th width="50">Pick Up Date</th>
 	<td>
-		<input type="date" name="txtPickUpDate" min="2018-01" max="2020-12" class="form-control" value="<?php echo $row[17];?>"/>	<!-- <input type="text" name="txtPickUpDate" value="<?php echo $row[17];?>"> -->
+		<input type="date" name="txtPickUpDate" min="2018-01" max="2099-12" class="form-control" value="<?php echo $row[17];?>"/>	<!-- <input type="text" name="txtPickUpDate" value="<?php echo $row[17];?>"> -->
 	</td></tr>
 	<tr>
 	<th width="50">Ship Date</th>
 	<td>
-		<input type="date" name="txtShipDate" min="2018-01" max="2020-12" class="form-control" value="<?php echo $row[18];?>"/>
+		<input type="date" name="txtShipDate" min="2018-01" max="2099-12" class="form-control" value="<?php echo $row[18];?>"/>
 	</td></tr>
 	<tr>
 	<th width="50">Tracking Number</th>
