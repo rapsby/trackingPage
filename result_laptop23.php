@@ -1,9 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<link rel="stylesheet" type="text/css" href="fallstyle.css">
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript">
+	<?php
+	session_start();
+	?>
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="fallstyle.css">
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
 	// make tr clickable
 	jQuery(document).ready(function($) {
 		$(".clickable-row").click(function() {
@@ -31,7 +34,6 @@
 
 <body>
 	<?php
-	session_start();
 	$username = 'FALL1';
 	$password = 'qqqqqq1!';
 	$hostname = '10.1.10.24';
@@ -39,13 +41,18 @@
 	$serverName = "10.1.10.24\\FALL1";
 	$connectionInfo = array( "Database"=>$dbName, "UID" => $username, "PWD" => $password);
 	$conn = sqlsrv_connect( $hostname, $connectionInfo);
-	
-	$sql = "SELECT * FROM laptop WHERE Available='Y' ORDER BY CPU, INCHES";
-	?>
-	
-	<?php
+	$studentNumber = $_GET["studentNumber"];
+	$id = $_GET["id"];
+	$sql = "SELECT * FROM student WHERE studentNumber=$studentNumber ";
 	$stmt = sqlsrv_query($conn,$sql);
-	$studentNumber = $_GET["id"];
+	$sid;
+	while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC) )
+	{
+		$sid=$row[0];
+	}
+
+	$sql = "SELECT * FROM laptop WHERE Available='Y' ORDER BY CPU, INCHES";
+	$stmt = sqlsrv_query($conn,$sql);
 
 	echo '<table class="phptable" border=1 >';
 	echo "<tr>
@@ -59,7 +66,7 @@
 
 	while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC) ) {
 		echo "
-		<tr class='clickable-row' data-href='reservationlaptop.php?id=$row[0]&studentNumber=$studentNumber'>
+		<tr class='clickable-row' data-href='reservationlaptop.php?id=$row[0]&sid=$sid&studentNumber=$studentNumber'>
 		<td>$row[1]</td>
 		<td>$row[2]</td>
 		<td>$row[3]</td>

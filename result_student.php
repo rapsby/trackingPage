@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -80,7 +73,7 @@
 
 	while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC) ) {
 		echo "
-		<tr class='clickable-row' data-href='info_student.php?id=$row[0]'>
+		<tr class='clickable-row' data-href='info_student.php?sid=$row[0]'>
 		<td><input type='checkbox' name='chkDel[]' value=$row[0]></td>
 		<td>$row[0]</td>
 		<td>$row[1]</td>

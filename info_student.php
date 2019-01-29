@@ -1,3 +1,6 @@
+<?php
+	session_start();
+	?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +10,9 @@
 <body>
 
 	<?php
-	$id = $_GET["id"];
+	$sid = $_GET["sid"];
+	$_SESSION['sid'] = $sid;
+	$nid = $_GET["id"];
 	$username = 'FALL1';
 	$password = 'qqqqqq1!';
 	$hostname = '10.1.10.24';
@@ -18,78 +23,265 @@
 	$connectionInfo = array( "Database"=>$dbName, "UID" => $username, "PWD" => $password);
 	$conn = sqlsrv_connect( $hostname, $connectionInfo);
 
+	
 
-	$sql = "SELECT * FROM student WHERE id = $id ";
+	$sql ="SELECT * FROM student WHERE id = '".$_GET["sid"]."' ";
 	$stmt = sqlsrv_query($conn,$sql);
-
-	
-	echo '<table class="phptable" border=1 >';
-
-	echo "<tr>
-	<th>ID</th>
-	<th>NAME</th>
-	<th>StudentNumber</th>
-	<th>Program</th>
-	<th>PhoneNumber</th>
-	<th>email</th>
-	<th>Start Date</th>
-	<th>LSA</th>
-	<th>tag</th>
-	<th>Notes</th>
-	<th>DocuSign</th>
-	<th>Cpu</th>
-	<th>AddtoLed</th>
-	<th>Ordered</th>
-	<th>Onhand</th>
-	<th>LenApp</th>
-	<th>TimApp</th>
-	<th>PickUpDate</th>
-	<th>ShipDate</th>
-	<th>TrackingNumber</th>
-	<th>Received</th>
-	<th>Completed</th>
-	<th>MSOFFICE</th>
-	<th>ReturnReceived</th>
-	</tr>";
+	$row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC)
 
 
-
-
-	while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC) ) {
-		echo "<tr>
-		<td>$row[0]</td>
-		<td>$row[1]</td>
-		<td>$row[2]</td>
-		<td>$row[3]</td>
-		<td>$row[4]</td>
-		<td>$row[5]</td>
-		<td>$row[6]</td>
-		<td>$row[7]</td>
-		<td>$row[8]</td>
-		<td>$row[9]</td>
-		<td>$row[10]</td>
-		<td>$row[11]</td>
-		<td>$row[12]</td>
-		<td>$row[13]</td>
-		<td>$row[14]</td>
-		<td>$row[15]</td>
-		<td>$row[16]</td>
-		<td>$row[17]</td>
-		<td>$row[18]</td>
-		<td>$row[19]</td>
-		<td>$row[20]</td>
-		<td>$row[21]</td>
-		<td>$row[22]</td>
-		<td>$row[23]</td>
-		</tr>";
-		
-
-		echo "</table>";
-
-	}
-	include "Edit_student.php";
-	
 	?>
+	<h1></h1>
+	<form action="Save_student.php" name="frmAdd" method="post">
+	<table  border="1" class="phptable">
+	<tr>
+	<th width="50">ID</th>
+	<td width="50">
+	<input type="text" name="txtId" value="<?php echo $row[0];?>">
+	</td></tr>
+	<tr>
+	<th width="50">Name</th>
+	<td><input type="text" name="txtName" value="<?php echo $row[1];?>"></td></tr>
+	<tr>
+	<th width="50">Student Number</th>
+	<td><input type="text" name="txtStudentNumber" value="<?php echo $row[2];?>"></td></tr>
+	<tr>
+	<th width="50">Student Program</th>
+	<td><input type="text" name="txtPro" value="<?php echo $row[3];?>"></td></tr>
+	<tr>
+	<th width="50">Phone Number</th>
+	<td><input type="text" name="txtPhoneNumber" value="<?php echo $row[4];?>"></td></tr>
+	<tr>
+	<th width="50">Email</th>
+	<td><input type="text" name="txtEmail" value="<?php echo $row[5];?>"></td></tr>
+	<tr>
+	<th width="50">Student Startdate</th>
+	<td><input type="text" name="txtStartdate" value="<?php echo $row[6];?>"></td></tr>
+	<tr>
+	<th width="50">Service Tag</th>
+	<td><input type="text" name="txtTag" value="<?php echo $row[8];?>">
+		<button type="button" onclick="window.open('result_laptop23.php?studentNumber=<?php echo $row[2];?>','window_name','width=400,height=500,location=no,status=no,scrollbars=yes');">Assign</button>
+	</td></tr>
+	<tr>
+	<th width="50">Notes</th>
+	<td><input type="text" name="txtNotes" value="<?php echo $row[9];?>"></td></tr>
+	<tr>
+	<th width="50">DocuSign</th>
+	<?php
+		
+				
+				echo (\strpos($row[10], 'Y') !== false) ?
+				'<td>
+				<input type="radio" name="txtDocuSign" checked value="Y">
+				<label for="txtDocuSign">Y</label>
+				<input type="radio" name="txtDocuSign" value="N">
+				<label for="txtDocuSign">N</label>
+				</td>'
+				:
+				'<td>
+				<input type="radio" name="txtDocuSign" value="Y">
+				<label for="txtDocuSign">Y</label>
+				<input type="radio" name="txtDocuSign" checked value="N">
+				<label for="txtDocuSign">N</label>
+				</td>';
+
+				?></tr>
+	<tr>
+	<th width="50">CPU</th>
+
+	<td><input type="text" name="txtCpu" value="<?php echo $row[11];?>">
+		
+	</td>
+
+
+	</tr>
+	<tr>
+	<th width="50">Added to Ledger</th>
+		<?php
+				
+				echo (\strpos($row[12], 'Y') !== false) ?
+				'<td>
+				<input type="radio" name="txtAddtoLed" checked value="Y">
+				<label for="txtAddtoLed">Y</label>
+				<input type="radio" name="txtAddtoLed" value="N">
+				<label for="txtAddtoLed">N</label>
+				</td>'
+				:
+				'<td>
+				<input type="radio" name="txtAddtoLed" value="Y">
+				<label for="txtAddtoLed">Y</label>
+				<input type="radio" name="txtAddtoLed" checked value="N">
+				<label for="txtAddtoLed">N</label>
+				</td>';
+
+				?></tr>
+	<tr>
+	<th width="50">Ordered</th>
+	<?php
+				
+				echo (\strpos($row[13], 'Y') !== false) ?
+				'<td>
+				<input type="radio" name="txtOrdered" checked value="Y">
+				<label for="txtOrdered">Y</label>
+				<input type="radio" name="txtOrdered" value="N">
+				<label for="txtOrdered">N</label>
+				</td>'
+				:
+				'<td>
+				<input type="radio" name="txtOrdered" value="Y">
+				<label for="txtOrdered">Y</label>
+				<input type="radio" name="txtOrdered" checked value="N">
+				<label for="txtOrdered">N</label>
+				</td>';
+
+				?></tr>
+	<tr>
+	<th width="50">Onhand</th>
+	<?php
+				
+				echo (\strpos($row[14], 'Y') !== false) ?
+				'<td>
+				<input type="radio" name="txtOnhand" checked value="Y">
+				<label for="txtOnhand">Y</label>
+				<input type="radio" name="txtOnhand" value="N">
+				<label for="txtOnhand">N</label>
+				</td>'
+				:
+				'<td>
+				<input type="radio" name="txtOnhand" value="Y">
+				<label for="txtOnhand">Y</label>
+				<input type="radio" name="txtOnhand" checked value="N">
+				<label for="txtOnhand">N</label>
+				</td>';
+
+				?></tr>
+	<tr>
+	<th width="50">Len Approval</th>
+	<?php
+				
+				echo (\strpos($row[15], 'Y') !== false) ?
+				'<td>
+				<input type="radio" name="txtLenApp" checked value="Y">
+				<label for="txtLenApp">Y</label>
+				<input type="radio" name="txtLenApp" value="N">
+				<label for="txtLenApp">N</label>
+				</td>'
+				:
+				'<td>
+				<input type="radio" name="txtLenApp" value="Y">
+				<label for="txtLenApp">Y</label>
+				<input type="radio" name="txtLenApp" checked value="N">
+				<label for="txtLenApp">N</label>
+				</td>';
+
+				?></tr>
+	<tr>
+	<th width="50">Tim Approval</th>
+	<?php
+				
+				echo (\strpos($row[16], 'Y') !== false) ?
+				'<td>
+				<input type="radio" name="txtTimApp" checked value="Y">
+				<label for="txtTimApp">Y</label>
+				<input type="radio" name="txtTimApp" value="N">
+				<label for="txtTimApp">N</label>
+				</td>'
+				:
+				'<td>
+				<input type="radio" name="txtTimApp" value="Y">
+				<label for="txtTimApp">Y</label>
+				<input type="radio" name="txtTimApp" checked value="N">
+				<label for="txtTimApp">N</label>
+				</td>';
+
+				?></tr>
+	<tr>
+	<th width="50">Pick Up Date</th>
+	<td>
+		<input type="date" name="txtPickUpDate" min="2018-01" max="2020-12" class="form-control" value="<?php echo $row[17];?>"/>	<!-- <input type="text" name="txtPickUpDate" value="<?php echo $row[17];?>"> -->
+	</td></tr>
+	<tr>
+	<th width="50">Ship Date</th>
+	<td>
+		<input type="date" name="txtShipDate" min="2018-01" max="2020-12" class="form-control" value="<?php echo $row[18];?>"/>
+	</td></tr>
+	<tr>
+	<th width="50">Tracking Number</th>
+	<td><input type="text" name="txtTrackingNumber" value="<?php echo $row[19];?>"></td></tr>
+	<tr>
+	<th width="50">Received</th>
+	<?php
+				
+				echo (\strpos($row[20], 'Y') !== false) ?
+				'<td>
+				<input type="radio" name="txtReceived" checked value="Y">
+				<label for="txtReceived">Y</label>
+				<input type="radio" name="txtReceived" value="N">
+				<label for="txtReceived">N</label>
+				</td>'
+				:
+				'<td>
+				<input type="radio" name="txtReceived" value="Y">
+				<label for="txtReceived">Y</label>
+				<input type="radio" name="txtReceived" checked value="N">
+				<label for="txtReceived">N</label>
+				</td>';
+
+				?></tr>
+	<tr>
+	<th width="50">Completed</th>
+	<?php
+				
+				echo (\strpos($row[21], 'Y') !== false) ?
+				'<td>
+				<input type="radio" name="txtCompleted" checked value="Y">
+				<label for="txtCompleted">Y</label>
+				<input type="radio" name="txtCompleted" value="N">
+				<label for="txtCompleted">N</label>
+				</td>'
+				:
+				'<td>
+				<input type="radio" name="txtCompleted" value="Y">
+				<label for="txtCompleted">Y</label>
+				<input type="radio" name="txtCompleted" checked value="N">
+				<label for="txtCompleted">N</label>
+				</td>';
+
+				?></tr>
+	<tr>
+	<th width="50">MS OFFICE</th>
+	<?php
+				
+				echo (\strpos($row[22], 'Y') !== false) ?
+				'<td>
+				<input type="radio" name="txtMSOFFICE" checked value="Y">
+				<label for="txtMSOFFICE">Y</label>
+				<input type="radio" name="txtMSOFFICE" value="N">
+				<label for="txtMSOFFICE">N</label>
+				</td>'
+				:
+				'<td>
+				<input type="radio" name="txtMSOFFICE" value="Y">
+				<label for="txtMSOFFICE">Y</label>
+				<input type="radio" name="txtMSOFFICE" checked value="N">
+				<label for="txtMSOFFICE">N</label>
+				</td>';
+
+				?></tr>
+	<tr>
+	<th width="50">Return Received</th>
+	<td><input type="text" name="txtReturnReceived" value="<?php echo $row[23];?>"></td></tr>
+	
+	</form>
+	
+
+
+	</table>
+	
+<h1></h1>
+<input type="submit" name="submit" value="Save">
+<input type="button" name="Closeseseses" value="Close" onclick="javascript:window.close();">
+
 
 </body>
 </html>

@@ -1,3 +1,6 @@
+<?php
+	session_start();
+	?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,8 +10,7 @@
 <body>
 
 	<?php
-
-	$id = $_GET["id"];
+	$sid=$_SESSION['sid'];
 	$username = 'FALL1';
 	$password = 'qqqqqq1!';
 	$hostname = '10.1.10.24';
@@ -19,7 +21,7 @@
 	$connectionInfo = array( "Database"=>$dbName, "UID" => $username, "PWD" => $password);
 	$conn = sqlsrv_connect( $hostname, $connectionInfo);
 
-	$sql = "SELECT * FROM laptop WHERE id = '".$_GET["id"]."' ";
+	$sql = "SELECT * FROM laptop WHERE id = '".$_GET["sid"]."' ";
 	$stmt = sqlsrv_query($conn,$sql);
 	$row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC);
 

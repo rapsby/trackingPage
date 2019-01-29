@@ -8,9 +8,9 @@
 
 	<?php
 	session_start();
-	
 
 	$id = $_GET["id"];	//laptop
+	$sid = $_GET["sid"];	//student ID
 	$studentNumber = $_GET["studentNumber"];
 	$username = 'FALL1';
 	$password = 'qqqqqq1!';
@@ -33,7 +33,7 @@
 	2. search laptop id in reservation table using trackingnNumber
 	3. update laptop set available = 'Y', student id = null
 	*/
-	$sql = "Select trackingNumber from student where Id=$sid";
+	$sql = "SELECT trackingNumber from student where Id=$sid";
 	$stmt = sqlsrv_query($conn,$sql);
 	$row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_NUMERIC);
 	$trackingNumber = $row[0];
@@ -55,10 +55,6 @@
 	$trackingNumber = str_pad($rid,"5","0",STR_PAD_LEFT);
 	$trackingNumber =date("ymd").$trackingNumber;
 	
-
-
-
-
 	$sql = "INSERT INTO reservation VALUES ($rid, $trackingNumber, $sid, $id, $date, null)";
 	$stmt = sqlsrv_query($conn,$sql);
 
@@ -91,7 +87,7 @@
 
 	while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC) ) {
 		echo "
-		<tr class='clickable-row' data-href='reservationlaptop.php?id=$row[0]'>
+		<tr class='clickable-row' data-href='reservationlaptop.php?id=$row[0]&studentNumber=$studentNumber&sid=$sid'>
 		<td>$row[1]</td>
 		<td>$row[4]</td>
 		<td>$row[5]</td>
@@ -101,11 +97,9 @@
 
 	?>
 	<script type="text/javascript">
-		self.close();
-
+		var newUrl = 'info_student.php?sid=<?php echo $sid?>';
+		window.location = newUrl;
 	</script>
-
-
 
 </body>
 </html>

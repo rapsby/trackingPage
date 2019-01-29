@@ -54,7 +54,7 @@
 	<tr>
 	<th width="50">Service Tag</th>
 	<td><input type="text" name="txtTag" value="<?php echo $row[8];?>">
-		<input type="button" onclick="window.open('result_laptop23.php?id=<?php echo $row[2];?>','window_name','width=400,height=500,location=no,status=no,scrollbars=yes');" value='Assign'>
+		<button type="button" onclick="window.open('result_laptop23.php?studentNumber=<?php echo $row[2];?>','window_name','width=400,height=500,location=no,status=no,scrollbars=yes');">Assign</button>
 	</td></tr>
 	<tr>
 	<th width="50">Notes</th>
@@ -191,10 +191,14 @@
 				?></tr>
 	<tr>
 	<th width="50">Pick Up Date</th>
-	<td><input type="text" name="txtPickUpDate" value="<?php echo $row[17];?>"></td></tr>
+	<td>
+		<input type="date" name="txtPickUpDate" min="2018-01" max="2020-12" class="form-control" value="<?php echo $row[17];?>"/>	<!-- <input type="text" name="txtPickUpDate" value="<?php echo $row[17];?>"> -->
+	</td></tr>
 	<tr>
 	<th width="50">Ship Date</th>
-	<td><input type="text" name="txtShipDate" value="<?php echo $row[18];?>"></td></tr>
+	<td>
+		<input type="date" name="txtShipDate" min="2018-01" max="2020-12" class="form-control" value="<?php echo $row[18];?>"/>
+	</td></tr>
 	<tr>
 	<th width="50">Tracking Number</th>
 	<td><input type="text" name="txtTrackingNumber" value="<?php echo $row[19];?>"></td></tr>
